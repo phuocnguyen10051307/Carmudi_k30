@@ -1,0 +1,350 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+/* header */
+.flex-wrap {
+    flex-wrap: wrap;
+  }
+  
+  .justify-between {
+    justify-content: space-between;
+  }
+  
+  .items-center {
+    align-items: center;
+  }
+  
+  .m-auto {
+    margin: auto;
+  }
+  
+  .pd {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .max-w-screen {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  /* nar */
+  .text-w {
+    font-weight: 600;
+  }
+  
+  .text-w:hover {
+    color: rgb(75, 194, 234);
+  }
+  
+  .buy {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .menu {
+    text-align: left;
+  }
+  
+  .buy-hidden {
+    border: 1px rgb(217, 190, 190) solid;
+    border-radius: 0.4rem;
+    background-color: white;
+    position: absolute;
+    display: none;
+    width: 700px;
+  }
+  
+  .buy:hover .buy-hidden {
+    display: flex;
+  }
+  
+  .text-menu {
+    font-size: 16px;
+  }
+  
+  .text-nav {
+    font-size: 14px;
+    display: block;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .text-nav:hover {
+    background-color: rgb(209, 220, 227);
+  }
+  
+  li a {
+    text-decoration: none;
+    color: black;
+  }
+  
+  .gap-6 {
+    gap: 1.5rem;
+  }
+  
+  /* right */
+  .text-w1 {
+    font-weight: 700;
+  }
+  
+  .text-h {
+    font-weight: 500;
+  }
+  
+  .up {
+    width: 150px;
+    height: 50px;
+    color: white;
+    text-decoration: none;
+    background-color: orange;
+    text-align: center;
+    padding-top: 10px;
+    border-radius: 0.25rem;
+  }
+  
+  .up:hover {
+    background-color: rgb(204, 141, 25);
+  }
+  
+  .phone {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .user {
+    position: relative;
+    display: block;
+  }
+  
+  .user-btn {
+    padding: 0px;
+    padding-bottom: 2px;
+  }
+  
+  .user-hidden {
+    border: 1px rgb(217, 190, 190) solid;
+    border-radius: 0.4rem;
+    background-color: white;
+    display: none;
+    width: 120px;
+  }
+  
+  .u-hidden {
+    text-align: left;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  
+  .u-hidden:hover {
+    background-color: rgb(209, 220, 227);
+  }
+  
+  .user:hover .user-hidden {
+    background-color: white;
+    position: absolute;
+    display: block;
+  }
+  
+  .footer {
+    background-color: rgb(9 37 61);
+    width: auto;
+  }
+  
+  .footer-left {
+    width: 250px;
+  }
+  
+  .container {
+    display: grid;
+    margin-top: auto;
+  }
+  
+  .text-white > .d-flex > input {
+    width: 330px;
+  }
+  
+  .input-btn {
+    width: 80px;
+    height: 50px;
+    background-color: rgb(11, 143, 243);
+  }
+  
+  .text-md {
+    font-size: 14px;
+  }
+  
+  .mt-5 {
+    margin-top: 1.25rem;
+  }
+  
+  .icon {
+    align-items: baseline;
+    margin-left: 0;
+    list-style: none;
+    gap: 2rem;
+    padding: 0px;
+  }
+  
+  .list-st {
+    list-style: none;
+    padding: 0px;
+    width: 200px;
+  }
+  
+  .text-ft {
+    color: rgb(165 183 198);
+  }
+  
+  .text-sz {
+    font-size: 12px;
+  }
+  
+  /* range input */
+  .wrapper{
+    width: 100%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px 20px 20px;
+  }
+  
+  .year-input{
+    width: 100%;
+    display: flex;
+    margin: 30px 0 35px;
+    justify-content: space-around;
+  }
+  
+  .year-input .field{
+    height: 45px;
+    width: 100%;
+  }
+  
+  .field input{
+    width: 110px;
+    height: 100%;
+    outline: none;
+    font-size: 19px;
+    margin-left: 12px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    -moz-appearance: textfield;
+  }
+  
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+  }
+  
+  
+  
+  .slider{
+    height: 5px;
+    border-radius: 5px;
+    background: #ddd;
+    position: relative;
+  }
+  
+  .slider .progress{
+    height: 5px;
+    left: 25%;
+    right: 25%;
+    position: absolute;
+    border-radius: 5px;
+    background: #17A2B8;
+  }
+  
+  .range-input{
+    position: relative;
+  }
+  
+  .range-input input{
+    position: absolute;
+    top: -5px;
+    height: 5px;
+    width: 100%;
+    background: none;
+    pointer-events: none;
+    -webkit-appearance: none;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb{
+    height: 17px;
+    width: 17px;
+    border-radius: 50%;
+    pointer-events: auto;
+    -webkit-appearance: none;
+    background: #17A2B8;
+  }
+  
+  input[type="range"]::-moz-range-thumb{
+    height: 17px;
+    width: 17px;
+    border: none    ;
+    border-radius: 50%;
+    pointer-events: auto;
+    -moz-appearance: none;
+    background: #17A2B8;
+  }
+  
+  #overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Màu nền mờ */
+    z-index: 1000; /* Số thứ tự cao hơn của lớp mờ */
+    display: none; /* Ẩn ban đầu */
+  }
+  
+  #register {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001; /* Số thứ tự cao hơn của form đăng ký */
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+  }
+  
+  .input-icon{
+    position: fixed;
+    top: 45%;
+    left: 45px;
+  }
+  
+  #exit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+  .form-control::placeholder {
+    color: #aaa;
+    font-size: 14px;
+  }
+  
+  .checkbox-wrapper {
+    display: flex; 
+    align-items: center; 
+    text-transform: capitalize;
+  }
+  
+  .checkbox-brand {
+    margin-right: 5px; 
+  }
+  
+  #button-addon2{
+    background-color: rgb(24 110 182);
+  }

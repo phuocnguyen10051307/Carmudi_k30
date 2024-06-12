@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+}
+
+#iconOil{
+    height: 54px;
+    width: 54px;
+    background-color:#10823e ;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 16px 8px;
+    position: fixed;
+    bottom: 50%;
+    right: 20px;
+}
+
+#backToTop {
+    height: 50px;
+    width: 50px;
+    background-color: #0095f9;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 40px;
+    right: 20px;
+    transition: opacity 0.3s ease;
+}
+
+#backToTop:hover{
+    background-color: orange;
+    cursor: pointer;
+}
+
+.hidden {
+    opacity: 0; 
+    pointer-events: none; 
+}
+
+.visible {
+    opacity: 1; 
+    pointer-events: auto;
+}
+
+.navbar {
+    transition: top 0.3s; 
+}
+
+.navbar.fixed-top {
+    position: fixed; 
+    top: 0;
+    height: 70px;
+    width: 100%;
+    z-index: 1000; 
+}
+
+.title{
+    padding-top: 100px;
+}
+
+
+.list-st {
+    list-style: none;
+    padding: 0px;
+    width: 200px;
+}
+
+.footer {
+    background-color: rgb(9 37 61);
+    width: auto;
+}
+
+.footer-left {
+    width: 250px;
+}
+
+.text-ft {
+    color: rgb(165 183 198);
+}
+
+.text-sz {
+    font-size: 12px;
+}
+
+.text-white > .d-flex > input {
+    width: 330px;
+}
+
+#button-addon2{
+    background-color: rgb(24 110 182);
+}
+
+    
+
+

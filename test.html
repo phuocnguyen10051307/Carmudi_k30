@@ -1,0 +1,269 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="test.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <style>
+    #pagination li {
+      display: inline;
+      margin: 0 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="search" placeholder="search" oninput="searchUser()">
+  <br>
+  <select id="sort" onchange="sortUsers()">
+    <option value="default">-- Sort by default</option>
+    <option value="az">A-Z</option>
+    <option value="za">Z-A</option>
+  </select>
+  <br>
+  <table cellpadding="15" cellspacing="0" id="table" style="border:1px solid black;">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody id="table-body">
+    </tbody>
+  </table>
+  <br>
+  <div id="pagination">
+    <ul></ul>
+  </div>
+  <script>
+    let users = [];
+    let filteredUsers = [];
+    let currentPage = 1;
+    const perPage = 2;
+
+    async function getUser() {
+      try {
+        const response = await axios.get('https://jsonplaceholder.typicode.com/users');
+        users = response.data;
+        filteredUsers = [...users]; 
+        renderUser(filteredUsers.slice(0, perPage)); 
+        renderPageNumber();
+      } catch (error) {
+        console.log(error);
+      }
+    }
+
+    function handlePageNumber(num) {
+      currentPage = num;
+      renderUser(filteredUsers.slice((currentPage - 1) * perPage, currentPage * perPage));
+    }
+
+    function renderPageNumber() {
+      const totalPage = Math.ceil(users.length / perPage);
+      let paginationElement = '';
+      for (let i = 1; i <= totalPage; i++) {
+        paginationElement += `<li onclick="handlePageNumber(${i})">${i}</li>`;
+      }
+      document.getElementById('pagination').innerHTML = `<ul>${paginationElement}</ul>`;
+    }
+
+    function renderUser(usersToRender) {
+      let element = '';
+      usersToRender.forEach(user => {
+        element += `
+          <tr>
+            <td>${user.id}</td>
+            <td>${user.name}</td>
+          </tr>`;
+      });
+      document.getElementById('table-body').innerHTML = element;
+    }
+
+    getUser();
+  </script>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="test.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <style>
+    .card {
+      transition: transform 0.3s;
+    }
+    .card:hover {
+      transform: scale(1.05);
+    }
+    #pagination li {
+      display: inline;
+      cursor: pointer;
+      padding: 5px 10px;
+      border: 1px solid #ddd;
+      margin: 0 2px;
+    }
+    #pagination li:hover {
+      background-color: #f0f0f0;
+    }
+    .d-flex {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .option {
+      cursor: pointer;
+      padding: 5px;
+      border: 1px solid #ddd;
+      margin: 5px 0;
+    }
+    .option:hover {
+      background-color: #f0f0f0;
+    }
+    #sortDiv {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="search-show w-100">
+    <div class="text-r d-flex">
+      <p>Sắp xếp:</p>
+      <span id="showSortDiv">Liên quan nhất</span>
+      <div id="sortDiv" class="position:absolute;">
+          <p>Ngày đăng</p>
+          <div class="option form-" onclick="sortUsers('desc', 'Ngày đăng: Mới nhất')"><input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">   Mới nhất</div>
+          <div class="option" onclick="sortUsers('asc', 'Ngày đăng: Cũ nhất')"><input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">   Cũ nhất</div>
+          <br>
+          <p>Giá</p>
+          <div class="option" onclick="sortUsers('price_asc', 'Giá: Tăng dần')"><input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">   Tăng dần</div>
+          <div class="option" onclick="sortUsers('price_desc', 'Giá: Giảm dần')"><input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">   Giảm dần</div>
+          <br>
+          <p>Số Km</p>
+          <div class="option" onclick="sortUsers('km_asc', 'Số Km: Tăng dần')"><input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">   Tăng dần</div>
+          <div class="option" onclick="sortUsers('km_desc', 'Số Km: Giảm dần')"><input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">   Giảm dần</div>
+          <br>
+          <p>Năm sản xuất</p>
+          <div class="option" onclick="sortUsers('year_asc', 'Năm sản xuất: Cũ đến mới')"><input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">   Cũ đến mới</div>
+          <div class="option" onclick="sortUsers('year_desc', 'Năm sản xuất: Mới đến cũ')"><input class="form-check-input" type="radio" name="radioNoLabel" id="radioNoLabel1" value="" aria-label="...">   Mới đến cũ </div>
+      </div>
+    </div>
+    <div id="show" class="d-flex"></div>
+  </div>
+
+  <script>
+    let users = [];
+    let filteredUsers = [];
+    let currentPage = 1;
+    const perPage = 10;
+
+    async function fetchData() {
+      try {
+        const response = await axios.get('http://localhost:5000/car');
+        users = response.data;
+        filteredUsers = [...users];
+        renderCars(filteredUsers.slice(0, perPage));
+        renderPageNumbers();
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    }
+
+    function handlePageNumber(num) {
+      currentPage = num;
+      const perUser = filteredUsers.slice((currentPage - 1) * perPage, currentPage * perPage);
+      renderCars(perUser);
+    }
+
+    function renderPageNumbers() {
+      const totalPage = Math.ceil(filteredUsers.length / perPage);
+      let paginationHTML = '';
+      for (let i = 1; i <= totalPage; i++) {
+        paginationHTML += `<li onclick="handlePageNumber(${i})">${i}</li>`;
+      }
+      document.getElementById('pagination').innerHTML = paginationHTML;
+    }
+
+    function renderCars(array) {
+      const cardsContainer = document.getElementById("show");
+      cardsContainer.innerHTML = ""; // Clear previous cards
+      array.forEach((car) => {
+        const card = document.createElement("div");
+        card.classList.add("card", "me-3", "mb-3");
+        card.innerHTML = `
+          <div class="card">
+            <img src="${car.ImageUrl}" class="card-img-top" alt="${car.Title}">
+            <div class="card-body">
+              <h5 class="card-title" style="height: 40px;">${car.Title}</h5>
+              <p class="card-text"><i class="bi bi-calendar-event-fill"></i> ${car.Year}</p>
+              <p class="card-text"><i class="bi bi-speedometer"></i> ${car.Kilometer} km</p>
+              <br>
+              <p class="card-text"><i class="bi bi-fuel-pump"></i> ${car.Fuel}</p>
+              <p class="card-text"><i class="bi bi-bezier2"></i> ${car.Transmission}</p>
+            </div>
+            <div class="card-footer">
+              <p class="card-text" style="font-size:20px; color:red;">${car.Price}</p>
+              <p class="card-text" style="font-size:12px;"><i class="bi bi-geo-alt"></i> ${car.Address.Province} - ${car.Address.Districts}</p>
+            </div>
+          </div>`;
+        cardsContainer.appendChild(card);
+      });
+    }
+
+    function searchUser() {
+      const valueSearchInput = document.getElementById('search').value.toUpperCase();
+      filteredUsers = users.filter(user => user.Title.toUpperCase().includes(valueSearchInput));
+      handlePageNumber(1);
+      renderPageNumbers();
+    }
+
+    function sortUsers(sortType) {
+      if (sortType === "asc") {
+        filteredUsers.sort((a, b) => a.id - b.id);
+      } else if (sortType === "desc") {
+        filteredUsers.sort((a, b) => b.id - a.id);
+      } else if (sortType === "price_asc") {
+        filteredUsers.sort((a, b) => parseFloat(a.Price) - parseFloat(b.Price));
+      } else if (sortType === "price_desc") {
+        filteredUsers.sort((a, b) => parseFloat(b.Price) - parseFloat(a.Price));
+      } else if (sortType === "km_asc") {
+        filteredUsers.sort((a, b) => parseFloat(a.Kilometer) - parseFloat(b.Kilometer));
+      } else if (sortType === "km_desc") {
+        filteredUsers.sort((a, b) => parseFloat(b.Kilometer) - parseFloat(a.Kilometer));
+      } else if (sortType === "year_asc") {
+        filteredUsers.sort((a, b) => parseFloat(a.Year) - parseFloat(b.Year));
+      } else if (sortType === "year_desc") {
+        filteredUsers.sort((a, b) => parseFloat(b.Year) - parseFloat(a.Year));
+      }
+      
+      handlePageNumber(1);
+      renderPageNumbers();
+    }
+
+    document.getElementById('showSortDiv').addEventListener('click', function() {
+      const sortDiv = document.getElementById('sortDiv');
+      sortDiv.style.display = sortDiv.style.display === 'none' ? 'block' : 'none';
+    });
+
+    document.addEventListener("click", function(event) {
+      const sortDiv = document.getElementById('sortDiv');
+      const showSortDiv = document.getElementById('showSortDiv');
+      if (!sortDiv.contains(event.target) && !showSortDiv.contains(event.target)) {
+        sortDiv.style.display = 'none';
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      fetchData();
+    });
+  </script>
+</body>
+</html>
+
+
+

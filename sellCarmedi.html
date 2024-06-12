@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="assets/logo.png" />
+    <title>Carmedi</title>
+    <link rel="stylesheet" href="./style/sellCarmedi.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <link rel="stylesheet" href="./style/buyCarmedi.css " />
+  </head>
+
+  <body>
+    <div class="row">
+      <!-- Header -->
+      <header aria-label="Site Header" class="shadow">
+        <div
+          class="d-flex items-center justify-between max-w-screen m-auto flex-wrap"
+        >
+          <nav class="navbar navbar-expand-lg">
+            <div
+              class="container-fluid d-flex flex-wrap items-center justify-between gap-4"
+            >
+              <a class="navbar-brand" href="#"
+                ><img src="./assets/logo-carmudi.pmg" alt=""
+              /></a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item buy z-1">
+                    <div class="d-flex justify-between items-center z-">
+                      <a
+                        class="nav-link text-w .text-secondary"
+                        href="./buyCarmedi.html"
+                        >Mua xe <i class="bi bi-chevron-down"></i
+                      ></a>
+                    </div>
+                    <div class="menu buy-hidden">
+                      <div class="pd">
+                        <div>
+                          <h5 class="text-menu">HÃNG XE PHỔ BIẾN</h5>
+                        </div>
+                        <div>
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Toyota</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Honda</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Mercedes-Benz</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Ford</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >BMW</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Chevrolet</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Hyundai</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Kia</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Mazda</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >VinFast</a
+                          >
+                          <a href="" class="text-primary">Xem tất cả xe</a>
+                        </div>
+                      </div>
+                      <div class="pd">
+                        <div>
+                          <h5 class="text-menu">DÒNG XE PHỔ BIẾN</h5>
+                        </div>
+                        <div>
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Mercedes-Benz GL Class</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Mercedes-Benz E Class</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Mitsubishi Xpander Cross</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Toyota Fortuner</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Mercedes-Benz S Class</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Mercedes-Benz C Class</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Hyundai Santafe</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Toyota Corolla Cross</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Ford Everest</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Toyota Vios</a
+                          >
+                        </div>
+                      </div>
+                      <div class="pd">
+                        <div>
+                          <h5 class="text-menu">GIÁ XE</h5>
+                        </div>
+                        <div>
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Dưới 500 triệu</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Từ 500 - 700 triệu</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Từ 700 - 1 tỷ</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Trên 1 tỷ</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link text-w .text-secondary"
+                      href="./sellCarmedi.html"
+                      >Bán xe</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link text-w .text-secondary"
+                      href="./IntroCarmedi.html"
+                      >Giới thiệu</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link text-w .text-secondary"
+                      href="./newsCarmedi.html"
+                      >Tin tức</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <div class="d-flex justify-between items-center gap-6">
+            <a href="" class="up text-w1">
+              <span class="bi bi-car-front-fill"></span>
+              ĐĂNG TIN
+            </a>
+            <a href="" class="phone text-h">
+              <i class="bi bi-telephone-fill"></i>
+              <span>0938119439</span>
+            </a>
+            <div class="user">
+              <div class="text-h">
+                <i class="bi bi-person-circle"></i>
+                <button class="user-btn btn text-h">Tài khoản</button>
+                <i class="bi bi-chevron-down"></i>
+              </div>
+              <div class="user-hidden">
+                <div class="d-grid">
+                  <button id="registerBtn" class="btn u-hidden" type="button">
+                    Đăng ký
+                  </button>
+                  <button class="btn u-hidden" type="button">
+                    <a href="login.html" class="text-decoration-none text-dark"
+                      >Đăng nhập</a
+                    >
+                  </button>
+                  <button class="btn u-hidden" type="button">Báo giá</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+    <div class="home-line">
+      <a href="./IntroCarmedi.html" class="p-2" style="text-decoration: none"
+        >Trang chủ</a
+      >
+      <span class="bi bi-chevron-right"> Bán xe </span>
+    </div>
+
+    <div class="headerSellCard position-relative">
+      <div class="header-img">
+        <img src="./assets/desktop-11.12.2023.webp" alt="" />
+      </div>
+      <div class="header-sell cardSell">
+        <div class="card p-3">
+          <div class="card-body">
+            <h5 class="card-title">
+              Nhập thông tin chi tiết của bạn và nhận giá xe của bạn ngay lập
+              tức
+            </h5>
+            <div class="row">
+              <div class="col-6">
+                Hãng xe
+                <select
+                  class="form-select form-select"
+                  id="carCompany"
+                  onchange="carCompany(this.value)"
+                >
+                  <option selected>Chọn hãng xe</option>
+                </select>
+              </div>
+              <div class="col-6">
+                Dòng xe
+                <select
+                  class="form-select form-select"
+                  id="vehicles"
+                  onchange="vehicles(this.value)"
+                  disabled
+                >
+                  <option selected>Chọn dòng xe</option>
+                </select>
+              </div>
+              <div class="col-6">
+                Phiên bản
+                <select
+                  class="form-select form-select"
+                  id="carVersion"
+                  disabled
+                >
+                  <option selected>Chọn phiên bản</option>
+                </select>
+              </div>
+              <div class="col-6">
+                Năm sản xuất
+                <select class="form-select form-select" id="year">
+                  <option selected>Chọn năm sản xuất</option>
+                </select>
+              </div>
+              <div class="col-6">
+                Số km đã đi
+                <input
+                  class="form-control form-control"
+                  type="number"
+                  placeholder="Nhập số km đã đi"
+                  id="kilometer"
+                />
+              </div>
+              <div class="col-6">
+                Số điện thoại
+                <input
+                  class="form-control form-control"
+                  type="number"
+                  placeholder="096xxxxxxx"
+                  id="phone"
+                  oninput="button()"
+                />
+              </div>
+              <div class="d-flex justify-content-center mt-3">
+                <button
+                  class="btn btn-primary w-100 p-3"
+                  id="btn"
+                  disabled
+                  value=""
+                  onclick=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#formSell"
+                >
+                  Định giá và bán xe ngay
+                </button>
+              </div>
+              <p class="w-100">
+                Để tiếp tục, tôi đồng ý với
+                <a href="">Chính sách quyền riêng tư</a>,<a href="">
+                  Điều khoản sử dụng</a
+                >
+                & <a href="">Điều khoản</a> & <a href="">điều kiện niêm yết.</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="modal fade"
+        id="formSell"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Thông tin</h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <div class="col-12 d-flex">
+                <div class="col-6 pe-2">
+                  Tỉnh/Thành
+                  <select
+                    class="form-select form-select"
+                    id="province"
+                    onchange="callAPIDistrict()"
+                  >
+                    <option selected>Chọn tỉnh/thành</option>
+                  </select>
+                </div>
+                <div class="col-6">
+                  Quận/Huyện
+                  <select
+                    class="form-select form-select"
+                    id="district"
+                    onchange=""
+                  >
+                    <option selected>Chọn quận/huyện</option>
+                  </select>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  Nhập giá tiền
+                  <input
+                    class="form-control form-control"
+                    type="number"
+                    max="5000000000"
+                    min="5000000"
+                    placeholder="Giá tiền muốn bán"
+                    id="money"
+                  />
+                </div>
+                <div class="col-6">
+                  Kiểu dáng
+                  <select
+                    class="form-select form-select"
+                    id="Designs"
+                    onchange=""
+                  >
+                    <option selected>Chọn kiểu dáng</option>
+                  </select>
+                </div>
+                <div class="col-6">
+                  Hộp số
+                  <select
+                    class="form-select form-select"
+                    id="foamBox"
+                    onchange=""
+                  >
+                    <option selected>Chọn hộp số</option>
+                  </select>
+                </div>
+                <div class="col-6">
+                  Nhiên liệu
+                  <select class="form-select form-select" id="fuel" onchange="">
+                    <option selected>Chọn loại nhiên liệu</option>
+                  </select>
+                </div>
+                <div class="col-6">
+                  Màu sắc
+                  <select
+                    class="form-select form-select"
+                    id="color"
+                    onchange=""
+                  >
+                    <option selected>Chọn màu xe</option>
+                  </select>
+                </div>
+                <div class="col-6">
+                  Số chỗ ngồi
+                  <select
+                    class="form-select form-select"
+                    id="chair"
+                    onchange=""
+                  >
+                    <option selected>Chọn số ghế</option>
+                  </select>
+                </div>
+                <div class="col-6">
+                  Tên người bán
+                  <input
+                    class="form-control form-control"
+                    type="text"
+                    placeholder="Tên người bán..."
+                    id="name"
+                  />
+                </div>
+                <div class="col-6">
+                  Xuất xứ
+                  <select
+                    class="form-select form-select"
+                    id="origin"
+                    onchange=""
+                  >
+                    <option selected>Chọn xuất xứ</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  Tên của xe
+                  <input
+                    class="form-control form-control"
+                    type="text"
+                    placeholder="Tên xe..."
+                    id="nameCar"
+                  />
+                </div>
+                <div class="col-12">
+                  <input
+                    type="file"
+                    class="inputFile"
+                    id="fileInp"
+                    onchange="getFile(event)"
+                    accept="img/png, img.jpeg"
+                  />
+                  <label for="fileInp">+</label>
+                  <span class="fileText"></span>
+                  <button onclick="uploadImage()">UPLOAD IMAGE</button>
+                  <div class="bar">
+                    <div class="progress"></div>
+                  </div>
+                  <div class="uploadPercentage">0%</div>
+                  <div class="imageUploaded">
+                    <img alt="" class="img" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Close
+              </button>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-dismiss="modal"
+                onclick="showData()"
+              >
+                Save changes
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="carSelling-Steps">
+      <div class="container">
+        <h1 class="text-center p-5">
+          4 bước bán xe chỉ trong 1 giờ cùng Carmudi
+        </h1>
+        <div class="row">
+          <div class="col">
+            <div class="card cardInfo">
+              <div class="card-body pos">
+                <div class="position-absolute top-0 end-0">
+                  <img src="./assets/corner.svg" alt="" />
+                </div>
+                <span class="position-absolute text-white fw-bold">1</span>
+                <div class="p-5 ps-0">
+                  <img src="../assets/calendar.svg" alt="" />
+                </div>
+                <b class="card-text"
+                  >1.Định giá và đặt lịch kiểm tra xe miễn phí</b
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card cardInfo">
+              <div class="card-body cardi">
+                <div class="position-absolute top-0 end-0">
+                  <img src="./assets/corner.svg" alt="" />
+                </div>
+                <span class="position-absolute text-white fw-bold">2</span>
+                <div class="p-5 ps-0">
+                  <img src="../assets/mail.svg" alt="" />
+                </div>
+                <b class="card-text"
+                  >2. Nhận kết quả tình trạng xe và giá đề xuất</b
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card cardInfo">
+              <div class="card-body">
+                <div class="position-absolute top-0 end-0">
+                  <img src="./assets/corner.svg" alt="" />
+                </div>
+                <span class="position-absolute text-white fw-bold">3</span>
+                <div class="p-5 ps-0">
+                  <img src="./assets/car.svg" alt="" />
+                </div>
+                <b class="card-text"
+                  >3. Carmudi tiến hành mọi thủ tục mua-bán xe trong 24 giờ</b
+                >
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card cardInfo">
+              <div class="card-body">
+                <div class="position-absolute top-0 end-0">
+                  <img src="./assets/corner.svg" alt="" />
+                </div>
+                <span class="position-absolute text-white fw-bold">4</span>
+                <div class="p-5 ps-0">
+                  <img src="./assets/money.svg" alt="" />
+                </div>
+                <b class="card-text"
+                  >4. Chủ xe nhận thanh toán nhanh - gọn trong vòng 1 giờ</b
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center p-4">
+          <button class="btn btn-primary p-2 w-25">Đăng ký hỗ trợ ngay!</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="reasons-sellCar">
+      <div class="container">
+        <h1 class="text-center p-5">Lí do nên bán xe tại Carmudi</h1>
+        <div class="row">
+          <div class="col d-flex justify-content-end">
+            <img
+              src="./assets/reason_bg.jpeg"
+              alt=""
+              style="width: 400px; height: 240px"
+            />
+          </div>
+          <div class="col">
+            <ul>
+              <li>
+                <img
+                  class="icon-reason p-3"
+                  src="./assets/calendar-hand.svg"
+                  alt=""
+                />
+                <b class="ps-3">Hẹn kiểm tra xe tại nơi bạn chọn</b>
+              </li>
+              <li>
+                <img
+                  class="icon-reason p-3"
+                  src="./assets/car-inspection.svg"
+                  alt=""
+                />
+                <b class="ps-3">Định giá minh bạch và tốt nhất thị trường</b>
+              </li>
+              <li>
+                <img
+                  class="icon-reason p-3"
+                  src="./assets/fast-time.svg"
+                  alt=""
+                />
+                <b class="ps-3">Hoàn tất thủ tục,thanh toán nhanh chóng</b>
+              </li>
+              <li>
+                <img
+                  class="icon-reason p-3"
+                  src="./assets/security.svg"
+                  alt=""
+                />
+                <b class="ps-3">Bảo mật thông tin từ A đến Z</b>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="registerInspection">
+      <div class="container">
+        <h1 class="text-center p-5">Đăng ký kiểm định xe miễn phí</h1>
+        <div class="row d-flex justify-content-center">
+          <div class="col">
+            <ol>
+              <li>
+                <div class="d-flex flex-row h-100 align-items-center">
+                  <div
+                    class="border border-primary rounded-circle d-flex align-items-center justify-content-center circle-icon"
+                  >
+                    <div
+                      class="bg-primary rounded-circle"
+                      style="width: 16px; height: 16px"
+                    ></div>
+                  </div>
+                  <b class="ms-2">Nhập thông tin cơ bản của xe</b>
+                </div>
+                <div
+                  class="vr m-3"
+                  style="
+                    width: 3px;
+                    height: 30px;
+                    opacity: 2;
+                    color: rgb(26 111 183);
+                  "
+                ></div>
+              </li>
+              <li>
+                <div class="d-flex flex-row h-100 align-items-center">
+                  <div
+                    class="border border-primary d-flex align-items-center justify-content-center rounded-circle circle-icon"
+                  >
+                    <div
+                      class="bg-primary rounded-circle"
+                      style="width: 16px; height: 16px"
+                    ></div>
+                  </div>
+                  <b class="ms-2"> Nhận giá ước tính theo tình trạng xe</b>
+                </div>
+                <div
+                  class="vr m-3"
+                  style="
+                    width: 3px;
+                    height: 30px;
+                    opacity: 2;
+                    color: rgb(26 111 183);
+                  "
+                ></div>
+              </li>
+              <li>
+                <div class="d-flex flex-row h-100 align-items-center">
+                  <div
+                    class="border border-primary d-flex align-items-center justify-content-center rounded-circle circle-icon"
+                  >
+                    <div
+                      class="bg-primary rounded-circle"
+                      style="width: 16px; height: 16px"
+                    ></div>
+                  </div>
+                  <b class="ms-2">Đặt lịch kiểm tra xe và giao dịch</b>
+                </div>
+              </li>
+            </ol>
+          </div>
+          <div class="col">
+            <img src="./assets/ban-xe-intro.webp" alt="" />
+          </div>
+        </div>
+        <div class="d-flex justify-content-center p-4">
+          <button class="btn btn-primary p-2 w-25">Đăng ký hỗ trợ ngay!</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="carSellSuccess">
+      <h1 class="text-center p-5 text-white">
+        Carmudi tự hào hỗ trợ thành công rất nhiều chủ xe
+      </h1>
+      <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner pb-5">
+          <div class="carousel-item active">
+            <div class="container mx-auto">
+              <div class="row d-flex justify-content-center mt-5 C5-carousel">
+                <div class="col-3">
+                  <div class="d-flex justify-content-center">
+                    <div class="card position-relative p-3 card-SellCar">
+                      <div class="card-body">
+                        <img
+                          class="position-absolute icon-testimonial"
+                          src="./assets/testimonial.svg"
+                          alt=""
+                        />
+                        <h6 class="card-subtitle mb-2">
+                          Trải nghiệm tuyệt vời
+                        </h6>
+                        <p class="card-text">
+                          Carmudi trả giá cao nhất nên mình chọn bán cho bên
+                          này. Mình được chủ động thời gian, không mất công di
+                          chuyển qua lại nhiều nơi và khi chốt mình nhận thanh
+                          toán ngay trong ngày. Rất nhanh gọn!
+                        </p>
+                      </div>
+                      <div class="d-flex justify-content-center">
+                        <i
+                          class="bi bi-square-fill position-absolute text-white"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <img
+                      class="imgPeople mt-lg-4"
+                      src="./assets/nguyenthile.webp"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="d-flex justify-content-center">
+                    <div class="card position-relative p-3 card-SellCar">
+                      <div class="card-body">
+                        <img
+                          class="position-absolute icon-testimonial"
+                          src="./assets/testimonial.svg"
+                          alt=""
+                        />
+                        <h6 class="card-subtitle mb-2">
+                          Nhân viên rất nhiệt tình
+                        </h6>
+                        <p class="card-text">
+                          Thật khó để tìm mua được chiếc xe máy móc và nội thất
+                          ưng ý , nhưng sau đó Tôi tình cờ biết đến Carmudi. Họ
+                          có đội ngũ kiểm tra xe tại nhà, hoàn thành các thủ tục
+                          giấy tờ nhanh. Thái độ nhân viên tốt.
+                        </p>
+                      </div>
+                      <div class="d-flex justify-content-center">
+                        <i
+                          class="bi bi-square-fill position-absolute text-white"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <img
+                      class="imgPeople mt-lg-4"
+                      src="./assets/vohuynhphuong.webp"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="container mx-auto">
+              <div class="row d-flex justify-content-center mt-5 C5-carousel">
+                <div class="col-3">
+                  <div class="d-flex justify-content-center">
+                    <div class="card position-relative p-3 card-SellCar">
+                      <div class="card-body">
+                        <img
+                          class="position-absolute icon-testimonial"
+                          src="./assets/testimonial.svg"
+                          alt=""
+                        />
+                        <h6 class="card-subtitle mb-2">
+                          Trải nghiệm tuyệt vời
+                        </h6>
+                        <p class="card-text">
+                          Carmudi trả giá cao nhất nên mình chọn bán cho bên
+                          này. Mình được chủ động thời gian, không mất công di
+                          chuyển qua lại nhiều nơi và khi chốt mình nhận thanh
+                          toán ngay trong ngày. Rất nhanh gọn!
+                        </p>
+                      </div>
+                      <div class="d-flex justify-content-center">
+                        <i
+                          class="bi bi-square-fill position-absolute text-white"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <img
+                      class="imgPeople mt-lg-4"
+                      src="./assets/nguyenthile.webp"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="col-3">
+                  <div class="d-flex justify-content-center">
+                    <div class="card position-relative p-3 card-SellCar">
+                      <div class="card-body">
+                        <img
+                          class="position-absolute icon-testimonial"
+                          src="./assets/testimonial.svg"
+                          alt=""
+                        />
+                        <h6 class="card-subtitle mb-2">
+                          Nhân viên rất nhiệt tình
+                        </h6>
+                        <p class="card-text">
+                          Thật khó để tìm mua được chiếc xe máy móc và nội thất
+                          ưng ý , nhưng sau đó Tôi tình cờ biết đến Carmudi. Họ
+                          có đội ngũ kiểm tra xe tại nhà, hoàn thành các thủ tục
+                          giấy tờ nhanh. Thái độ nhân viên tốt.
+                        </p>
+                      </div>
+                      <div class="d-flex justify-content-center">
+                        <i
+                          class="bi bi-square-fill position-absolute text-white"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="d-flex justify-content-center">
+                    <img
+                      class="imgPeople mt-lg-4"
+                      src="./assets/vohuynhphuong.webp"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExample"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="carSalesQuestion">
+      <div class="container pb-5">
+        <h1 class="text-center p-5">Một số câu hỏi khi cần bán xe</h1>
+        <div class="col d-flex justify-content-center pb-5">
+          <div
+            class="btn-group-vertical w-100 btnListGroup"
+            role="group"
+            aria-label="Vertical button group"
+          >
+            <button
+              class="btn btn-light text-start bg-white position-relative"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#a"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            >
+              Vì sao nên mua bán xe tại Carmudi
+              <i class="bi bi-chevron-down position-absolute"></i>
+            </button>
+            <div class="w-100">
+              <div class="collapse" id="a">
+                <div class="bg-white p-3">
+                  - Khách hàng đặt lịch và tùy chọn nơi kiểm kiểm tra: tại
+                  Carmudi hoặc tại nhà theo yêu cầu của quý khách.
+                  <br />
+                  - Định giá tối ưu & minh bạch - Xe của bạn được định giá cao
+                  hơn giá thị trường. Toàn bộ quá trình giao dịch diễn ra trực
+                  tiếp giữa chủ xe và Carmudi. <br />
+                  - Hoàn tất thủ tục nhanh chóng, thanh toán trong vòng 24h -
+                  Toàn bộ quá trình mua bán diễn ra nhanh chóng. Thanh toán ngay
+                  lập tức sau khi hoàn thành các thủ tục giấy tờ pháp lý về việc
+                  chuyển quyền sở hữu xe.<br />
+                  - Bảo mật thông tin từ A đến Z - Toàn bộ quá trình từ đăng ký
+                  kiểm định giá đến hoàn tất giao dịch đều được Carmudi cam kết
+                  bảo mật thông tin.
+                </div>
+              </div>
+            </div>
+            <button
+              class="btn btn-light text-start bg-white position-relative"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#b"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            >
+              Quy trình bán xe tại Carmudi diễn ra như thế nào?
+              <i class="bi bi-chevron-down position-absolute"></i>
+            </button>
+            <div class="w-100">
+              <div class="collapse" id="b">
+                <div class="bg-white p-3">
+                  Carmudi luôn hỗ trợ khách hàng để quá trình mua xe diễn ra dễ
+                  dàng hơn:<br />
+                  Bước 1: Khách hàng định giá xe tại Carmudi.vn và đặt lịch kiểm
+                  tra xe miễn phí<br />
+                  Bước 2: Sau đó, chuyên viên của Carmudi sẽ kiểm tra xe và đưa
+                  ra mức giá đề xuất cho quý khách hàng<br />
+                  Bước 3: Carmudi hỗ trợ hoàn tất thủ tục pháp lý để chuyển
+                  quyền sở hữu xe trong vòng 24 giờ<br />
+                  Bước 4: Ngay sau khi hoàn tất, Carmudi sẽ thanh toán cho bạn
+                  trong vòng 1 giờ theo mức giá chốt bán<br />
+                </div>
+              </div>
+            </div>
+            <button
+              class="btn btn-light text-start bg-white position-relative"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#c"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            >
+              Lí do Carmudi thu mua được giá cao?
+              <i class="bi bi-chevron-down position-absolute"></i>
+            </button>
+            <div class="w-100">
+              <div class="collapse" id="c">
+                <div class="bg-white p-3">
+                  Carmudi thu mua xe đã qua sử dụng với mức giá cao hơn thị
+                  trường vì các lí do:<br />
+                  <br />
+                  - Không mất phí trung gian, chủ xe trực tiếp bán xe cho
+                  Carmudi.<br />
+                  - Giá trị xe được tính toán dựa trên thuật toán AI kết hợp với
+                  kinh nghiệm của chuyên gia ô tô, để đảm bảo chiếc xe được định
+                  giá đúng với giá trị nhất.<br />
+                  - Ngoài ra, Carmudi luôn đặt quyền lợi của quý khách hàng lên
+                  hàng đầu, vì vậy khi sử dụng dịch vụ của Carmudi bạn sẽ nhận
+                  được những lợi ích sau:<br />
+                  <br />
+                  1.Định giá và đặt lịch kiểm tra xe miễn phí<br />
+                  2. Nhận kết quả tình trạng xe và giá đề xuất<br />
+                  3. Carmudi tiến hành mọi thủ tục mua bán xe trong 24 giờ<br />
+                  4. Chủ xe nhận thanh toán nhanh gọn trong vòng 1 giờ<br />
+                </div>
+              </div>
+            </div>
+            <button
+              class="btn btn-light text-start bg-white position-relative"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#d"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            >
+              Cần chủ bị thủ tục hồ sơ gì khi bán xe tại Carmudi?
+              <i class="bi bi-chevron-down position-absolute"></i>
+            </button>
+            <div class="w-100">
+              <div class="collapse" id="d">
+                <div class="bg-white p-3">
+                  Hồ sơ giấy tờ cần chuẩn bị để bán xe nhanh chóng:<br />
+                  <br />
+                  Giấy tờ gốc của chủ xe, bao gồm:<br />
+                  - CCCD của người đứng tên trên Đăng ký xe<br />
+                  - Giấy tờ liên quan đến tình trạng hôn nhân: Xác nhận độc
+                  thân/ đăng ký kết hôn/ Xác nhận ly hôn.<br />
+                  - Giấy xác nhận quyền thừa kế/ cho/ biếu/ tặng (nếu có)<br />
+                  - CCCD của vợ hoặc chồng (nếu có)<br />
+                  <br />
+                  Giấy tờ gốc của xe, bao gồm:<br />
+                  - Đăng ký xe<br />
+                  - Đăng kiểm xe<br />
+                  - Sổ bảo hành (nếu có)<br />
+                  - Bảo hiểm vật chất xe (nếu có)<br />
+                </div>
+              </div>
+            </div>
+            <button
+              class="btn btn-light text-start bg-white position-relative"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#e"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            >
+              Hình thức thanh toán giao dịch cho khách hàng của Carmudi
+              <i class="bi bi-chevron-down position-absolute"></i>
+            </button>
+            <div class="w-100">
+              <div class="collapse" id="e">
+                <div class="bg-white p-3">
+                  Chúng tôi sẽ thanh toán qua tài khoản ngân hàng của bạn NGAY
+                  SAU KHI hoàn thành các thủ tục giấy tờ pháp lý về việc chuyển
+                  quyền sở hữu xe.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sellCarsFast d-flex justify-content-center">
+      <div class="container m-5">
+        <h1 class="text-center text-white">
+          Bán xe một cách nhanh chóng <br />
+          với giá tốt nhất!
+        </h1>
+        <div class="d-flex justify-content-center mt-5">
+          <button class="btn btn-primary p-3">Đăng ký hỗ trợ ngay!</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div
+        class="d-flex justify-content- flex-wrap py-5 px-4"
+        style="margin-left: 150px; gap: 100px"
+      >
+        <div class="footer-left">
+          <a href="">
+            <img src="./assets/logo-carmudi-white.png" alt="" />
+          </a>
+          <p class="mt-5 text-white text-md">
+            Carmudi - nền tảng hàng đầu trong lĩnh vực xe cũ tại Việt Nam. Cam
+            kết mang đến cho khách hàng trải nghiệm hoàn toàn minh bạch, nhanh
+            chóng và đáng tin cậy.
+          </p>
+          <ul class="icon d-flex">
+            <li>
+              <a href="" class="text-white">
+                <i class="bi bi-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="" class="text-white">
+                <i class="bi bi-tiktok"></i>
+              </a>
+            </li>
+            <li>
+              <a href="" class="text-white">
+                <i class="bi bi-youtube"></i>
+              </a>
+            </li>
+            <li>
+              <a href="" class="text-white">
+                <i class="bi bi-linkedin"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="text-white">
+          <p>Đăng ký nhận bản tin</p>
+          <p class="text-md">
+            Nhận bản tin để không bỏ lỡ thông tin và khuyến mãi của Carmudi
+          </p>
+          <div class="d-flex flex-wrap">
+            <input
+              type="email"
+              class="form-control input"
+              placeholder="Nhập vào email của bạn"
+              aria-label="Nhập vào email của bạn"
+              aria-describedby="button-addon2"
+            />
+            <button
+              class="btn btn-outline-secondary input-btn text-white"
+              type="button"
+              id="button-addon2"
+            >
+              Gửi
+            </button>
+          </div>
+          <div class="d-flex flex-wrap pt-5">
+            <div>
+              <div>
+                <h2>Dịch vụ</h2>
+              </div>
+              <ul class="list-st">
+                <li>
+                  <a href="" class="text-ft text-md">Mua xe ô tô</a>
+                </li>
+                <li>
+                  <a href="" class="text-ft text-md">Bán xe ô tô</a>
+                </li>
+                <li>
+                  <a href="" class="text-ft text-md">Trở thành cộng tác viên</a>
+                </li>
+                <li>
+                  <a href="" class="text-ft text-md">Báo giá cửa hàng</a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div>
+                <h2>Hỗ trợ</h2>
+              </div>
+              <ul class="list-st">
+                <li>
+                  <a href="" class="text-ft text-md">Mua bảo hiểm ô tô</a>
+                </li>
+                <li>
+                  <a href="" class="text-ft text-md">Trả góp mua xe</a>
+                </li>
+                <li>
+                  <a href="" class="text-ft text-md">Câu hỏi thường gặp</a>
+                </li>
+                <li>
+                  <a href="" class="text-ft text-md">Liên hệ</a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div>
+                <h2>Về Carmudi</h2>
+              </div>
+              <ul class="list-st">
+                <li>
+                  <a href="" class="text-ft text-md">Giới thiệu công ty</a>
+                </li>
+                <li>
+                  <a href="" class="text-ft text-md">Tin tức</a>
+                </li>
+                <li>
+                  <a href="" class="text-ft text-md"
+                    >Chính sách quyền riêng tư</a
+                  >
+                </li>
+                <li>
+                  <a href="" class="text-ft text-md">Điều khoản sử dụng</a>
+                </li>
+                <li>
+                  <a href="" class="text-ft text-md">Cơ hội làm việc</a>
+                </li>
+                <li>
+                  <a href="" class="text-ft text-md">Chứng nhận Carmudi</a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div>
+                <h2>Công ty thành viên</h2>
+              </div>
+              <ul class="list-st">
+                <li>
+                  <a href="" class="text-ft text-md"
+                    >OtoS - Trang đăng tin bán</a
+                  >
+                </li>
+                <li>
+                  <a href="" class="text-ft text-md">xe uy tín tại Việt Nam</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="pb-5 px-4">
+        <p class="text-center text-sz text-ft">
+          CÔNG TY TNHH XE CLASSIFIEDS. Hotline: 0938119439 (Toàn quốc) Số ĐKKD:
+          0312648170<br />
+          Địa chỉ: Tầng 6, Toà nhà Mê Linh Point, 2 Ngô Đức Kế, Phường Bến Nghé,
+          Quận 1, Thành Phố Hồ Chí Minh, Việt Nam. ©2023 by Car Classifieds
+          Limited Liability Company.<br />
+          Carmudi Vietnam là một thành viên của
+          <a
+            class="text-decoration-none"
+            style="color: rgb(165 183 198)"
+            href="https://fram.asia/"
+            ><span class="fw-bold text-white">fram^ </span>Group</a
+          >
+        </p>
+      </div>
+    </footer>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+  <script src="javascripts/sellCarmedi.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase-storage.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- <script>
+  var imageUrl = "";
+  const firebaseConfig = {
+    apiKey: "AIzaSyC3i8RjDeB0D0HkDVVD5DTORt4V5JFAvAk",
+    authDomain: "carmudiproject-1005.firebaseapp.com",
+    projectId: "carmudiproject-1005",
+    storageBucket: "carmudiproject-1005.appspot.com",
+    messagingSenderId: "437787651497",
+    appId: "1:437787651497:web:76a1a784020227d5b328b8",
+    measurementId: "G-Y7HY4GLYDT",
+  };
+  firebase.initializeApp(firebaseConfig);
+
+  var fileText = document.querySelector(".fileText");
+  var uploadPercentage = document.querySelector(".uploadPercentage");
+  var progress = document.querySelector(".progress");
+  var percentVal;
+  var fileItem;
+  var fileName;
+  var img = document.querySelector(".img");
+
+  function getFile(e) {
+    fileItem = e.target.files[0];
+    fileName = fileItem.name;
+    fileText.innerHTML = fileName;
+  }
+
+  function uploadImage() {
+    let storageRef = firebase.storage().ref("images/" + fileName);
+    let uploadTask = storageRef.put(fileItem);
+    uploadTask.on(
+      "state_changed",
+      (snapshot) => {
+        console.log(snapshot);
+        percentVal = Math.floor(
+          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+        );
+        console.log(percentVal);
+        uploadPercentage.innerHTML = percentVal + "%";
+        progress.style.width = percentVal + "%";
+      },
+      (error) => {
+        console.log("Error is ", error);
+      },
+      () => {
+        uploadTask.snapshot.ref.getDownloadURL().then((url) => {
+          console.log("URL", url);
+          imageUrl = url;
+          if (url != "") {
+            img.setAttribute("src", url);
+            img.style.display = "block";
+          }
+        });
+      }
+    );
+  }
+</script> -->
+  <script>
+    var imageUrl = "";
+    const firebaseConfig = {
+      apiKey: "AIzaSyC3i8RjDeB0D0HkDVVD5DTORt4V5JFAvAk",
+      authDomain: "carmudiproject-1005.firebaseapp.com",
+      projectId: "carmudiproject-1005",
+      storageBucket: "carmudiproject-1005.appspot.com",
+      messagingSenderId: "437787651497",
+      appId: "1:437787651497:web:76a1a784020227d5b328b8",
+      measurementId: "G-Y7HY4GLYDT",
+    };
+    firebase.initializeApp(firebaseConfig);
+
+    var fileText = document.querySelector(".fileText");
+    var uploadPercentage = document.querySelector(".uploadPercentage");
+    var progress = document.querySelector(".progress");
+    var percentVal;
+    var fileItem;
+    var fileName;
+    var img = document.querySelector(".img");
+
+    function getFile(e) {
+      fileItem = e.target.files[0];
+      fileName = fileItem.name;
+      fileText.innerHTML = fileName;
+    }
+
+    function uploadImage() {
+      let storageRef = firebase.storage().ref("images/" + fileName);
+      let uploadTask = storageRef.put(fileItem);
+
+      // Convert to Blob if the fileItem is not already a Blob or File object
+      if (!(fileItem instanceof Blob || fileItem instanceof File)) {
+        uploadTask = storageRef.put(new Blob([fileItem]));
+      }
+
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          console.log(snapshot);
+          percentVal = Math.floor(
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+          );
+          console.log(percentVal);
+          uploadPercentage.innerHTML = percentVal + "%";
+          progress.style.width = percentVal + "%";
+        },
+        (error) => {
+          console.log("Error is ", error);
+        },
+        () => {
+          uploadTask.snapshot.ref.getDownloadURL().then((url) => {
+            console.log("URL", url);
+            imageUrl = url;
+            if (url != "") {
+              img.setAttribute("src", url);
+              img.style.display = "block";
+              showData(url);
+            }
+          });
+        }
+      );
+    }
+  </script>
+</html>
