@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<div lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carmedi</title>
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    /> -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="./style/buyCarmedi.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <div>
+    <div class="row">
+      <!-- Header -->
+      <header aria-label="Site Header" class="shadow">
+        <div
+          class="d-flex items-center justify-between max-w-screen m-auto flex-wrap"
+        >
+          <nav class="navbar navbar-expand-lg">
+            <div
+              class="container-fluid d-flex flex-wrap items-center justify-between gap-4"
+            >
+              <a class="navbar-brand logoNav" href="#"
+                ><img src="./assets/logo-carmudi.pmg" alt=""
+              /></a>
+              <button
+                class="navbar-toggler menuNav"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item buy z-1">
+                    <div class="d-flex justify-between items-center z-">
+                      <a
+                        class="nav-link text-w .text-secondary"
+                        href="./buyCarmedi.html"
+                        >Mua xe <i class="bi bi-chevron-down"></i
+                      ></a>
+                    </div>
+                    <div class="menu buy-hidden">
+                      <div class="pd">
+                        <div>
+                          <h5 class="text-menu">HÃNG XE PHỔ BIẾN</h5>
+                        </div>
+                        <div>
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Toyota</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Honda</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Mercedes-Benz</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Ford</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >BMW</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Chevrolet</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Hyundai</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Kia</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Mazda</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >VinFast</a
+                          >
+                          <a href="" class="text-primary">Xem tất cả xe</a>
+                        </div>
+                      </div>
+                      <div class="pd">
+                        <div>
+                          <h5 class="text-menu">DÒNG XE PHỔ BIẾN</h5>
+                        </div>
+                        <div>
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Mercedes-Benz GL Class</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Mercedes-Benz E Class</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Mitsubishi Xpander Cross</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Toyota Fortuner</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Mercedes-Benz S Class</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Mercedes-Benz C Class</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Hyundai Santafe</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Toyota Corolla Cross</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Ford Everest</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Toyota Vios</a
+                          >
+                        </div>
+                      </div>
+                      <div class="pd">
+                        <div>
+                          <h5 class="text-menu">GIÁ XE</h5>
+                        </div>
+                        <div>
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Dưới 500 triệu</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Từ 500 - 700 triệu</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Từ 700 - 1 tỷ</a
+                          >
+                          <a href="" class="text-nav" style="height: 40px"
+                            >Trên 1 tỷ</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link text-w .text-secondary"
+                      href="./sellCarmedi.html"
+                      >Bán xe</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link text-w .text-secondary"
+                      href="./IntroCarmedi.html"
+                      >Giới thiệu</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link text-w .text-secondary"
+                      href="./newsCarmedi.html"
+                      >Tin tức</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <div class="d-flex justify-between items-center gap-6">
+            <a href="" class="rightNav up text-w1">
+              <span class="bi bi-car-front-fill"></span>
+              ĐĂNG TIN
+            </a>
+            <a href="" class="rightNav phone text-h">
+              <i class="bi bi-telephone-fill"></i>
+              <span>0938119439</span>
+            </a>
+            <div class="user">
+              <div class="text-h">
+                <i class="bi bi-person-circle"></i>
+                <button id="account" class="user-btn btn text-h">
+                  Tài khoản
+                </button>
+                <i class="bi bi-chevron-down"></i>
+              </div>
+              <div class="user-hidden">
+                <div class="d-grid">
+                  <button id="registerBtn" class="btn u-hidden" type="button">
+                    Đăng ký
+                  </button>
+                  <button class="btn u-hidden" type="button">
+                    <a href="login.html" class="text-decoration-none text-dark"
+                      >Đăng nhập</a
+                    >
+                  </button>
+                  <button class="btn u-hidden" type="button">Báo giá</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+    </div>
+    <div id="overlay"></div>
+    <div id="register">
+      <form>
+        <div id="exit"><i class="fa-solid fa-xmark"></i></div>
+        <fieldset>
+          <legend
+            class="d-flex justify-content-center fs-3 fw-bold"
+            style="margin-top: 50px"
+          >
+            Đăng ký tài khoản
+          </legend>
+          <div class="mb-3">
+            <label
+              for="disabledTextInput"
+              class="form-label d-flex justify-content-center"
+              style="font-size: 12px"
+              >Vui lòng nhập số điện thoại</label
+            >
+            <span class="input-icon">+ 84 |</span>
+            <input
+              type="text"
+              id="disabledTextInput"
+              class="form-control"
+              style="width: 500px; margin-left: 20px"
+              placeholder="Số điện thoại"
+              oninput="checkInput()"
+            />
+          </div>
+
+          <button
+            id="btnSubmit"
+            type="submit"
+            class="btn btn-secondary"
+            style="width: 500px; margin-left: 20px"
+          >
+            Lấy mã OTP <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </fieldset>
+        <div class="md-3">
+          <p class="d-flex justify-content-center">
+            Bằng cách nhấn vào nút Tiếp Tục,bạn sẽ nhận được tin nhắn
+          </p>
+          <p class="d-flex justify-content-center" style="margin-top: 5px">
+            Mã xác thực OTP
+          </p>
+        </div>
+      </form>
+    </div>
+    <div class="container-fluid">
+      <div class="slider-buy-max">
+        <div class="slider-min w-100 d-flex">
+          <img
+            src="./assets/a647860a-641e-465c-8507-0559c96e2499.jpg"
+            class="mt-2 me-2"
+            alt=""
+          />
+          <img
+            src="./assets/8b97c899-e28a-4165-ad21-5f0adf8e443b.jpg"
+            class="mt-2 me-2"
+            alt=""
+          />
+          <img
+            src="./assets/90b2fe99-2016-4eb8-a250-f279d4761e92.jpg"
+            class="mt-2 me-2"
+            alt=""
+          />
+          <img
+            src="./assets/835f2bfa-534d-4290-ba31-fb4ec3cf3972.jpg"
+            class="mt-2 me-2"
+            alt=""
+          />
+          <img
+            src="./assets/066a2adf-be19-4671-acda-d8e8ea5904e3.jpg"
+            class="mt-2 me-2"
+            alt=""
+          />
+        </div>
+      </div>
+    </div>
+    <div class="container infor-search d-flex mt-2">
+      <div class="row">
+        <div class="col-md-3">
+          <i class="fa-solid fa-list" id="filter-icon"></i>
+          <div class="search-panel" id="search-panel">
+            <div class="border-bottom">
+              <span class="reponsiveSearch">Bộ lộc</span>
+              <button class="close-btn" id="close-btn">&times;</button>
+            </div>
+            <ul
+              class="list-group text-lowercase border border-1 border-dark rounded-1 position-absolute"
+              id="li-tag"
+            >
+              <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseOne"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseOne"
+                    >
+                      <i class="bi bi-building-check"></i>
+                      Hãng xe, dòng xe
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseOne"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body d-flex flex-column">
+                      <input type="text" placeholder="Tìm kiếm" />
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseTwo"
+                    >
+                      <i class="bi bi-geo-alt"></i> Địa điểm
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseTwo"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="accordion-body">
+                      <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Tìm kiếm"
+                      />
+                      <div class="container">
+                        <div id="checkboxProvince" class="row"></div>
+                        <!-- checkbox -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#flush-collapseThree"
+                      aria-expanded="false"
+                      aria-controls="flush-collapseThree"
+                    >
+                      <i class="bi bi-cash"></i>Giá
+                    </button>
+                  </h2>
+                  <div
+                    id="flush-collapseThree"
+                    class="accordion-collapse collapse"
+                    data-bs-parent="#accordionFlushExample"
+                  >
+                    <div class="wrapper">
+                      <div class="slider">
+                        <div class="progress"></div>
+                      </div>
+                      <div class="range-input">
+                        <input
+                          type="range"
+                          class="range-min"
+                          min="50000000"
+                          max="5000000000"
+                          value="50000000"
+                          step="1"
+                        />
+                        <input
+                          type="range"
+                          class="range-max"
+                          min="50000000"
+                          max="5000000000"
+                          value="5000000000"
+                          step="1"
+                        />
+                      </div>
+                      <div class="year-input">
+                        <div class="field">
+                          <p
+                            class="d-flex justify-content-around fw-bold text-capitalize"
+                            style="font-size: 12px"
+                          >
+                            Tối thiểu
+                          </p>
+                          <input
+                            type="number"
+                            class="input-min"
+                            value="50000000"
+                            min="50000000"
+                            max="5000000000"
+                          />
+                        </div>
+                        <div class="field">
+                          <p
+                            class="d-flex justify-content-around fw-bold text-capitalize"
+                            style="font-size: 12px"
+                          >
+                            Tối đa
+                          </p>
+                          <input
+                            type="number"
+                            class="input-max"
+                            value="5000000000"
+                            min="50000000"
+                            max="5000000000"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseFour"
+                      aria-expanded="true"
+                      aria-controls="panelsStayOpen-collapseFour"
+                    >
+                      <i class="bi bi-calendar-event-fill"></i>Năm sản xuất
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseFour"
+                    class="accordion-collapse collapse"
+                  >
+                    <div class="wrapper">
+                      <div class="slider">
+                        <div class="progress"></div>
+                      </div>
+                      <div class="range-input">
+                        <input
+                          type="range"
+                          class="range-min"
+                          min="2000"
+                          max="2024"
+                          value="2000"
+                          step="1"
+                        />
+                        <input
+                          type="range"
+                          class="range-max"
+                          min="2000"
+                          max="2024"
+                          value="2024"
+                          step="1"
+                        />
+                      </div>
+                      <div class="year-input">
+                        <div class="field">
+                          <p
+                            class="d-flex justify-content-around fw-bold text-capitalize"
+                            style="font-size: 12px"
+                          >
+                            Tối thiểu
+                          </p>
+                          <input
+                            type="number"
+                            class="input-min"
+                            value="2000"
+                            min="2000"
+                            max="2024"
+                          />
+                        </div>
+
+                        <div class="field">
+                          <p
+                            class="d-flex justify-content-around fw-bold text-capitalize"
+                            style="font-size: 12px"
+                          >
+                            Tối đa
+                          </p>
+                          <input
+                            type="number"
+                            class="input-max"
+                            value="2024"
+                            min="2000"
+                            max="2024"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseFive"
+                      aria-expanded="true"
+                      aria-controls="panelsStayOpen-collapseFive"
+                    >
+                      <i class="bi bi-speedometer"></i> Số KM
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseFive"
+                    class="accordion-collapse collapse"
+                  >
+                    <div class="wrapper">
+                      <div class="slider">
+                        <div class="progress"></div>
+                      </div>
+                      <div class="range-input">
+                        <input
+                          type="range"
+                          class="range-min"
+                          min="0"
+                          max="500000"
+                          value="0"
+                          step="1"
+                        />
+                        <input
+                          type="range"
+                          class="range-max"
+                          min="0"
+                          max="500000"
+                          value="500000"
+                          step="1"
+                        />
+                      </div>
+                      <div class="year-input">
+                        <div class="field">
+                          <p
+                            class="d-flex justify-content-around fw-bold text-capitalize"
+                            style="font-size: 12px"
+                          >
+                            Tối thiểu
+                          </p>
+                          <input
+                            type="number"
+                            class="input-min"
+                            value="0"
+                            min="0"
+                            max="500000"
+                          />
+                        </div>
+                        <div class="field">
+                          <p
+                            class="d-flex justify-content-around fw-bold text-capitalize"
+                            style="font-size: 12px"
+                          >
+                            Tối đa
+                          </p>
+                          <input
+                            type="number"
+                            class="input-max"
+                            value="500000"
+                            min="0"
+                            max="500000"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseSix"
+                      aria-expanded="true"
+                      aria-controls="panelsStayOpen-collapseSix"
+                    >
+                      <i class="bi bi-car-front-fill"></i> Kiểu dáng
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseSix"
+                    class="accordion-collapse collapse"
+                  >
+                    <div class="accordion-body">
+                      <div class="form-check">
+                        <img src="./assets/couple.webp" alt="" />
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckChecked"
+                          checked
+                        />
+                      </div>
+                      <div class="form-check">
+                        <img src="./assets/wagon.webp" alt="" />
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckChecked"
+                          checked
+                        />
+                      </div>
+                      <div class="form-check">
+                        <img src="./assets/minivan.webp" alt="" />
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckChecked"
+                          checked
+                        />
+                      </div>
+                      <div class="form-check">
+                        <img src="./assets/truck.webp" alt="" />
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckChecked"
+                          checked
+                        />
+                      </div>
+                      <div class="form-check">
+                        <img src="./assets/hatchback.webp" alt="" />
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckChecked"
+                          checked
+                        />
+                      </div>
+                      <div class="form-check">
+                        <img src="./assets/suv.webp" alt="" />
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckChecked"
+                          checked
+                        />
+                      </div>
+                      <div class="form-check">
+                        <img src="./assets/suv.webp" alt="" />
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckChecked"
+                          checked
+                        />
+                      </div>
+                      <div class="form-check">
+                        <img src="./assets/sedan.webp" alt="" />
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckChecked"
+                          checked
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseSeven"
+                      aria-expanded="false"
+                      aria-controls="panelsStayOpen-collapseSeven"
+                    >
+                      <i class="bi bi-fuel-pump"></i> Nhiên liệu
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseSeven"
+                    class="accordion-collapse collapse"
+                  >
+                    <div class="accordion-body">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckChecked"
+                        />
+                        <label class="form-check-label" for="flexCheckChecked">
+                          Xăng
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckChecked"
+                        />
+                        <label class="form-check-label" for="flexCheckChecked">
+                          Dầu
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckChecked"
+                        />
+                        <label class="form-check-label" for="flexCheckChecked">
+                          Điện
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckChecked"
+                        />
+                        <label class="form-check-label" for="flexCheckChecked">
+                          Hybrid
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckChecked"
+                        />
+                        <label class="form-check-label" for="flexCheckChecked">
+                          Plug-in Hybrid
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseEight"
+                      aria-expanded="true"
+                      aria-controls="panelsStayOpen-collapseEight"
+                    >
+                      <i class="bi bi-bezier2"></i> Hộp số
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseEight"
+                    class="accordion-collapse collapse"
+                  >
+                    <div class="accordion-body">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckChecked"
+                        />
+                        <label class="form-check-label" for="flexCheckChecked">
+                          Số sàn
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          value=""
+                          id="flexCheckChecked"
+                        />
+                        <label class="form-check-label" for="flexCheckChecked">
+                          Số tự động
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button
+                      class="accordion-button collapsed"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseNine"
+                      aria-expanded="true"
+                      aria-controls="panelsStayOpen-collapseNine"
+                    >
+                      <i class="bi bi-palette"></i> Màu sắc
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseNine"
+                    class="accordion-collapse collapse"
+                  >
+                    <div class="accordion-body d-flex">
+                      <div
+                        class="rounded-circle"
+                        style="
+                          background-color: black;
+                          width: 20px;
+                          height: 20px;
+                        "
+                      ></div>
+                      <div
+                        class="rounded-circle"
+                        style="background-color: red; width: 20px; height: 20px"
+                      ></div>
+                      <div
+                        class="rounded-circle"
+                        style="
+                          background-color: yellow;
+                          width: 20px;
+                          height: 20px;
+                        "
+                      ></div>
+                      <div
+                        class="rounded-circle"
+                        style="
+                          background-color: white;
+                          width: 20px;
+                          height: 20px;
+                        "
+                      ></div>
+                      <div
+                        class="rounded-circle"
+                        style="
+                          background-color: brown;
+                          width: 20px;
+                          height: 20px;
+                        "
+                      ></div>
+                      <div
+                        class="rounded-circle"
+                        style="
+                          background-color: orange;
+                          width: 20px;
+                          height: 20px;
+                        "
+                      ></div>
+                      <div
+                        class="rounded-circle"
+                        style="
+                          background-color: silver;
+                          width: 20px;
+                          height: 20px;
+                        "
+                      ></div>
+                      <div
+                        class="rounded-circle"
+                        style="
+                          background-color: gray;
+                          width: 20px;
+                          height: 20px;
+                        "
+                      ></div>
+                      <div
+                        class="rounded-circle"
+                        style="
+                          background-color: bronze gold;
+                          width: 20px;
+                          height: 20px;
+                        "
+                      ></div>
+                      <div
+                        class="rounded-circle"
+                        style="
+                          background-color: blue;
+                          width: 20px;
+                          height: 20px;
+                        "
+                      ></div>
+                      <div
+                        class="rounded-circle"
+                        style="
+                          background-color: green;
+                          width: 20px;
+                          height: 20px;
+                        "
+                      ></div>
+                      <div
+                        class="rounded-circle"
+                        style="
+                          background-color: purple;
+                          width: 20px;
+                          height: 20px;
+                        "
+                      ></div>
+                      <div
+                        class="rounded-circle"
+                        style="
+                          background-color: pink;
+                          width: 20px;
+                          height: 20px;
+                        "
+                      ></div>
+                      <div
+                        class="rounded-circle"
+                        style="
+                          background-color: dark yellow;
+                          width: 20px;
+                          height: 20px;
+                        "
+                      ></div>
+                      <div
+                        class="rounded-circle"
+                        style="
+                          background-color: sand gold;
+                          width: 20px;
+                          height: 20px;
+                        "
+                      ></div>
+                      <div
+                        class="rounded-circle"
+                        style="
+                          background-color: earthy orange;
+                          width: 20px;
+                          height: 20px;
+                        "
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseTen"
+                        aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseTen"
+                      >
+                        <i class="bi bi-usb-plug"></i> số chỗ ngồi
+                      </button>
+                    </h2>
+                    <div
+                      id="panelsStayOpen-collapseTen"
+                      class="accordion-collapse collapse"
+                    >
+                      <div class="accordion-body">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexCheckChecked"
+                          >
+                            4
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexCheckChecked"
+                          >
+                            5
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexCheckChecked"
+                          >
+                            6
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexCheckChecked"
+                          >
+                            7
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexCheckChecked"
+                          >
+                            8
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexCheckChecked"
+                          >
+                            9
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button
+                        class="accordion-button collapsed"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseEleven"
+                        aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseEleven"
+                      >
+                        <i class="bi bi-person-circle"></i>Đăng bởi
+                      </button>
+                    </h2>
+                    <div
+                      id="panelsStayOpen-collapseEleven"
+                      class="accordion-collapse collapse"
+                    >
+                      <div class="accordion-body">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexCheckChecked"
+                          >
+                            Cá nhân
+                          </label>
+                        </div>
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            value=""
+                            id="flexCheckChecked"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="flexCheckChecked"
+                          >
+                            Đối tác của Carmudi
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="filter-buttons">
+                <button class="btn btn-primary">Bộ lọc</button>
+                <button class="btn btn-secondary">Hiển thị kết quả</button>
+              </div>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-9">
+          <div class="search-show ms-auto d-flex flex-column">
+            <label for="search"></label
+            ><input
+              type="text"
+              id="search"
+              placeholder="Search"
+              oninput="searchUser()"
+            />
+            <button onclick="fetchData()">Search</button>
+
+            <!-- nơi đổ dữ liệu car -->
+            <div class="row">
+              <div id="show"></div>
+            </div>
+            <div class="row">
+              <div id="pagination" class="container mt-4"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="d-flex justify-content- flex-wrap py-5 px-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="footer-left">
+                <a href="">
+                  <img src="./assets/logo-carmudi-white.png" alt="" />
+                </a>
+                <p class="mt-5 text-white text-md">
+                  Carmudi - nền tảng hàng đầu trong lĩnh vực xe cũ tại Việt Nam.
+                  Cam kết mang đến cho khách hàng trải nghiệm hoàn toàn minh
+                  bạch, nhanh chóng và đáng tin cậy.
+                </p>
+                <ul class="icon d-flex">
+                  <li>
+                    <a href="" class="text-white">
+                      <i class="bi bi-facebook"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" class="text-white">
+                      <i class="bi bi-tiktok"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" class="text-white">
+                      <i class="bi bi-youtube"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" class="text-white">
+                      <i class="bi bi-linkedin"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="text-white">
+                <p>Đăng ký nhận bản tin</p>
+                <p class="text-md">
+                  Nhận bản tin để không bỏ lỡ thông tin và khuyến mãi của
+                  Carmudi
+                </p>
+                <div class="d-flex">
+                  <input
+                    type="email"
+                    class="form-control input"
+                    placeholder="Nhập vào email của bạn"
+                    aria-label="Nhập vào email của bạn"
+                    aria-describedby="button-addon2"
+                  />
+                  <button
+                    class="btn btn-outline-secondary input-btn text-white"
+                    type="button"
+                    id="button-addon2"
+                  >
+                    Gửi
+                  </button>
+                </div>
+                <div class="d-flex pt-5">
+                  <div class="row">
+                    <div class="col">
+                      <div>
+                        <h2>Dịch vụ</h2>
+                      </div>
+                      <ul class="list-st">
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Mua xe ô tô</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Bán xe ô tô</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Trở thành cộng tác viên</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Báo giá cửa hàng</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="col">
+                      <div>
+                        <h2>Hỗ trợ</h2>
+                      </div>
+                      <ul class="list-st">
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Mua bảo hiểm ô tô</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Trả góp mua xe</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Câu hỏi thường gặp</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Liên hệ</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="col">
+                      <div>
+                        <h2>Về Carmudi</h2>
+                      </div>
+                      <ul class="list-st">
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Giới thiệu công ty</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Tin tức</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Chính sách quyền riêng tư</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Điều khoản sử dụng</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Cơ hội làm việc</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Chứng nhận Carmudi</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="col">
+                      <div>
+                        <h2>Công ty thành viên</h2>
+                      </div>
+                      <ul class="list-st">
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >OtoS - Trang đăng tin bán</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >xe uy tín tại Việt Nam</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="pb-5 px-4">
+            <p class="text-center text-sz text-ft">
+              CÔNG TY TNHH XE CLASSIFIEDS. Hotline: 0938119439 (Toàn quốc) Số
+              ĐKKD: 0312648170<br />
+              Địa chỉ: Tầng 6, Toà nhà Mê Linh Point, 2 Ngô Đức Kế, Phường Bến
+              Nghé, Quận 1, Thành Phố Hồ Chí Minh, Việt Nam. ©2023 by Car
+              Classifieds Limited Liability Company.<br />
+              Carmudi Vietnam là một thành viên của
+              <a
+                class="text-decoration-none"
+                style="color: rgb(165 183 198)"
+                href="https://fram.asia/"
+                ><span class="fw-bold text-white">fram^ </span>Group</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- chatbot -->
+  
+  <div class="chatbot position-fixed rounded-4">
+    <h2 class="fw-bold text-center p-2 text-white" style="background: #724ae8;font-size: 24px;">Chatbot</h2>
+    <ul class="chatbox list-unstyled p-4" style="height: 400px;">
+      <li class="d-flex">
+        <span class="text-light text-center rounded  align-self-end" style="background:#724ae8; line-height: 32px; width: 32px; height: 32px; margin: 0 10px 15px 0;"><i class="fa-solid fa-ghost"></i></span>
+        <p class="mw-75 text-dark bg-light rounded-4 p-2 fs-6">Hi there <i class="fa-regular fa-hand-peace"></i><br/>How can I help you today?</p>
+      </li>
+      <li class="d-flex justify-content-end ">
+        <p class="mw-75 text-light rounded-4 p-2 fs-6" style="background: #724ae8;">Lorem ipsum, dolor sit amet consectetur adipisicing elit!</p>
+      </li>
+    </ul>
+    <div class="chat-input d-flex position-absolute w-100 bg-light border-top-2 g-2" style="bottom: 0; padding: 5px 20px;">
+      <textarea class="border-0 bg-light outline-none fs-6 w-100" style="resize: none; padding: 16px 15px 16px 0;" placeholder="Enter a message ..." required></textarea>
+      <span id="send-btn" class="align-self-end cursor-pointer my-auto text-center"><i class="fa-regular fa-paper-plane"></i></span>
+    </div>
+  </div>  
+
+
+
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const fetchData = async () => {
+        const response = await fetch("http://localhost:5000/car");
+        const callDataCars = await response.json();
+        filterByAddress(callDataCars);
+      };
+      fetchData();
+
+      function renderCars(array) {
+        let cardsContainer = document.getElementById("show");
+        cardsContainer.innerHTML = ""; // Clear previous cards
+        array.forEach((car) => {
+          let card = document.createElement("div");
+          card.classList.add("card");
+          card.innerHTML = `
+              <img src="${car.ImageUrl}" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">${car.Title}</h5>
+                <p class="card-text"><i class="bi bi-calendar-event-fill"></i> ${car.Year}</p>
+                <p class="card-text"><i class="bi bi-speedometer"></i> ${car.Kilometer} km</p>
+                <p class="card-text"><i class="bi bi-fuel-pump"></i> ${car.Fuel}</p>
+                <p class="card-text"><i class="bi bi-bezier2"></i> ${car.Transmission}</p>
+              </div>
+              <div class="card-footer">
+                <p class="card-text" style="font-size:20px; color:red;">${car.Price}</p>
+                <p class="card-text" style="font-size:12px;"><i class="bi bi-geo-alt"></i> ${car.Address.Province} - ${car.Address.Districts}</p>
+              </div>`;
+          cardsContainer.appendChild(card);
+        });
+      }
+
+      function searchUser() {
+        let valueSearchInput = document.getElementById("search").value;
+        let filteredCars = cars.filter((car) => {
+          return car.Address.Province.toUpperCase().includes(
+            valueSearchInput.toUpperCase()
+          );
+        });
+        renderCars(filteredCars);
+      }
+
+      let values = "";
+      let listData = [];
+      function filterByAddress(data) {
+        values = document.getElementById("search").value;
+        if (values != "") {
+          listData = data.filter((el) => el.Address.Province == values);
+          renderCars(listData);
+        } else renderCars(data);
+      }
+    </script>
+    <script type="module" src="./javascripts/buyCarmedi.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </body>
+</html>

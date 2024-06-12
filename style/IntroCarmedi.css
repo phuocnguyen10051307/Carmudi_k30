@@ -1,0 +1,38 @@
+.visionMission {
+    background-color: rgb(13 56 92);
+  }
+  .eachYear {
+    width: 640px;
+  }
+  .timeHistory {
+    background: 0 0 url(../assets/location.png) no-repeat;
+    background-size: 32px auto;
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 56px;
+  }
+  .timeHistory:not(:last-child):before {
+    content: "";
+    border-left: 1px dashed #114a7a;
+    position: absolute;
+    top: 40px;
+    bottom: -40px;
+    left: 16px;
+    width: 0;
+  }
+  .infoHistory > li::marker {
+    color: orange;
+  }
+  .BuyOrSell {
+    background: url(../assets/image0103.png) no-repeat;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  #button-addon2{
+    background-color: rgb(24 110 182);
+  }
