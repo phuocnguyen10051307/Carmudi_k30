@@ -12,5 +12,8 @@
   "license": "ISC",
   "devDependencies": {
     "json-server": "^0.14.2"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.12.0"
   }
 }

@@ -261,8 +261,10 @@ const callAPIDistrict = async () => {
   });
 };
 
-const showData = async (imageURL) => {
+const showData = async () => {
   try {
+    
+
     const carCompany = document.getElementById("carCompany").value;
     const Vehicles = document.getElementById("vehicles").value;
     const Version = document.getElementById("carVersion").value;
@@ -278,13 +280,11 @@ const showData = async (imageURL) => {
     const Name = document.getElementById("name").value;
     const origin = document.getElementById("origin").value;
     const nameCar = document.getElementById("nameCar").value;
-    // const ImageURL = url;
     const Province = document.getElementById("province");
     const valueProvince = Province.options[Province.selectedIndex].text;
     const District = document.getElementById("district");
     const valueDistrict = District.options[District.selectedIndex].text;
 
-  
     const url = "http://localhost:5000/car";
     const getData = {
       Address: {
@@ -306,15 +306,16 @@ const showData = async (imageURL) => {
       Seats: chair,
       Origin: origin,
       Title: nameCar,
-      ImageUrl: imageURL,
+      ImageUrl: imageUrl,
     };
 
     const response = await axios.post(url, getData);
-    
+
     console.log("Data posted successfully:", response.data);
 
+    // Example of using Toastify for notification
     Toastify({
-      text: "Nhận thông tin thành công",
+      text: "Received information successfully",
       className: "info",
       duration: 3000,
       style: {
@@ -324,10 +325,11 @@ const showData = async (imageURL) => {
 
     return response.data;
   } catch (error) {
-    console.error("Lỗi khi gửi dữ liệu:", error.message);
+    console.error("Error sending data:", error.message);
 
+    // Example of using Toastify for error notification
     Toastify({
-      text: "Đã xảy ra lỗi",
+      text: "An error occurred",
       className: "infor",
       duration: 3000,
       style: {

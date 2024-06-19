@@ -17,46 +17,53 @@
 .infor-search .search-show #show {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around; 
 }
+
 .infor-search .search-show #show .card {
-  width: 328px;
-  margin: 0 10px 10px 10px;
+  flex: 0 1 calc(33.33% - 20px);
+  margin-bottom: 20px; 
   border: solid 2px black;
   height: 420px;
   box-shadow: 5px 5px 5px 5px rgb(179, 177, 177);
 }
+
 .infor-search .search-show #show .card:hover {
   box-shadow: 5px 5px rgb(133, 132, 132);
 }
+
 .infor-search .search-show #show .card .card-body p {
   display: inline-block;
   width: 100px;
 }
+
 .infor-search .search-show #show .card .card-body p i {
   border: solid 1px white;
   font-size: 14px;
 }
+
 .infor-search .search-show #show .card .card-footer p i {
   border: solid 1px white;
 }
+
 .infor-search .search-show #show .card img {
-  max-width: 350px;
-  height: 150px;
-  width: 325px;
+  max-width: 100%;
+  height: 150px; 
+  object-fit: cover; 
 }
+
 .infor-search .search-show i {
   border: solid black 2px;
   height: 40px;
   width: 1000px;
 }
+
 .infor-search .search-show i input {
   width: 950px;
   border: solid white 1px;
   height: 36px;
 }
-.infor-search .search-show #show {
-  display: flex;
-}
+
 
 #li-tag > li > span {
   display: inline-block;
@@ -471,8 +478,17 @@ form {
   right: 40px;
   bottom: 100px;
   overflow: hidden;
+  transform: scale(0.5);
+  opacity: 0;
+  pointer-events: none;
   width: 420px;
   box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
+}
+
+.show-chatbot .chatbot{
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .chatbox{
@@ -490,6 +506,39 @@ form {
 .chat-input textarea:valid ~ #send-btn{
   visibility: visible;
 }
+
+.chatbot-toggler{
+  right: 40px;
+  bottom: 35px;
+  height: 50px;
+  width: 50px;
+  background: #724ae8;
+  border-radius: 50%;
+  outline: none;
+  cursor: pointer;
+}
+
+.show-chatbot .chatbot-toggler span:first-child,
+.chatbot-toggler span:last-child{
+  opacity: 0;
+}
+
+.show-chatbot .chatbot-toggler span:last-child{
+  opacity: 1;
+}
+
+.header-close{
+  right: 20px;
+  top: 50%;
+  display: none;
+  transform: translateY(-50%);
+}
+
+#sendBtn{
+  cursor: pointer;
+}
+
+
 
 /* Default styles for desktop */
 #filter-icon,
@@ -596,7 +645,23 @@ form {
 
 
 
+@media(max-width:490px){
+  .chatbot{
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
 
+  .chatbot .chatbox{
+    height: 90%;
+  }
+
+  .header-close{
+    display: block;
+  }
+}
 
 
 

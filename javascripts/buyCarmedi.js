@@ -1,3 +1,5 @@
+// const { GoogleGenerativeAI } = require("@google/generative-ai");
+
 const wrappers = document.querySelectorAll(".wrapper");
 
 wrappers.forEach(wrapper => {
@@ -110,36 +112,37 @@ const searchPriceCar = async () => {
 
 //hàm dùng chung update lại trang
 const updateProductList = (products) => {
-  const productList = document.getElementById("show");
-  productList.innerHTML = '';
-
-  if (products.length === 0) {
+    const productList = document.getElementById("show");
+    productList.innerHTML = '';
+  
+    if (products.length === 0) {
       productList.innerHTML = '<p>No products found matching the criteria.</p>';
       return;
-  }
-
-  products.forEach(product => {
+    }
+  
+    products.forEach(product => {
       const productDiv = document.createElement('div');
-      productDiv.classList.add('product', 'col-lg-4', 'col-md-6', 'col-sm-12','col-12','mb-4');
+      productDiv.classList.add('col-lg-4', 'col-md-6', 'col-sm-12', 'mb-4');
       productDiv.innerHTML = `
-          <div class="card product-card w-100 m-auto" style='max-width:300px'>
-              <img src="${product.ImageUrl}" class="card-img-top w-100">
-              <div class="card-body">
-                  <h5 class="card-title">${product.Title}</h5>
-                  <p class="card-text"><i class="bi bi-calendar-event-fill"></i> ${product.Year}</p>
-                  <p class="card-text"><i class="bi bi-speedometer"></i> ${product.Kilometer} km</p>
-                  <p class="card-text"><i class="bi bi-fuel-pump"></i> ${product.Fuel}</p>
-                  <p class="card-text"><i class="bi bi-bezier2"></i> ${product.Transmission}</p>
-              </div>
-              <div class="card-footer">
-                  <p class="card-text" style="font-size:20px; color:red;">${product.Price}</p>
-                  <p class="card-text" style="font-size:12px;"><i class="bi bi-geo-alt"></i> ${product.Address.Province} - ${product.Address.Districts}</p>
-              </div>
+        <div class="card">
+          <img src="${product.ImageUrl}" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title">${product.Title}</h5>
+            <p class="card-text"><i class="bi bi-calendar-event-fill"></i> ${product.Year}</p>
+            <p class="card-text"><i class="bi bi-speedometer"></i> ${product.Kilometer} km</p>
+            <p class="card-text"><i class="bi bi-fuel-pump"></i> ${product.Fuel}</p>
+            <p class="card-text"><i class="bi bi-bezier2"></i> ${product.Transmission}</p>
           </div>
+          <div class="card-footer">
+            <p class="card-text" style="font-size:20px; color:red;">${product.Price}</p>
+            <p class="card-text" style="font-size:12px;"><i class="bi bi-geo-alt"></i> ${product.Address.Province} - ${product.Address.Districts}</p>
+          </div>
+        </div>
       `;
       productList.appendChild(productDiv);
-  });
-};
+    });
+  };
+  
 
 
 
@@ -159,86 +162,50 @@ searchPriceCar();
 
 // hàm phân trang 
 
-const perPage = 9; 
-let currentPage = 1; 
-let filteredCars = []; 
+const perPage = 9;
+let currentPage = 1;
+let filteredCars = [];
+
+
 
 // Hàm xử lý khi chuyển trang
-function handlePageNumber(num) { 
-  currentPage = num; 
-  const start = (currentPage - 1) * perPage; 
-  const end = currentPage * perPage; 
-  updateProductList(filteredCars.slice(start, end)); 
+function handlePageNumber(num) {
+  currentPage = num;
+  const start = (currentPage - 1) * perPage;
+  const end = currentPage * perPage;
+  updateProductList(filteredCars.slice(start, end));
 }
 
 // Đảm bảo rằng hàm handlePageNumber có phạm vi toàn cầu
-window.handlePageNumber = handlePageNumber; 
+window.handlePageNumber = handlePageNumber;
 
 // Hàm tạo ra các số trang và hiển thị chúng
-function renderPageNumber() { 
-  const totalPage = Math.ceil(filteredCars.length / perPage); 
+function renderPageNumber() {
+  const totalPage = Math.ceil(filteredCars.length / perPage);
   let paginationElement = "";
-  for (let i = 1; i <= totalPage; i++) { 
+  for (let i = 1; i <= totalPage; i++) {
     paginationElement += `<li class="page-item ms-2 border border-2 rounded"><a class="page-link" href="#" onclick="handlePageNumber(${i})">${i}</a></li>`;
   }
-  document.getElementById(
-    "pagination"
-  ).innerHTML = `<ul class="pagination">${paginationElement}</ul>`;
+  document.getElementById("pagination").innerHTML = `<ul class="pagination">${paginationElement}</ul>`;
 }
 
-async function fetchCarData() { 
+// Hàm lấy dữ liệu xe từ API
+async function fetchCarData() {
   try {
     const response = await fetch("http://localhost:5000/car");
     const data = await response.json();
-    filteredCars = data; 
-    updateProductList(filteredCars.slice(0, perPage)); 
-    renderPageNumber(); 
+    filteredCars = data;
+    updateProductList(filteredCars.slice(0, perPage));
+    renderPageNumber();
   } catch (error) {
     console.error("Error fetching car data:", error);
   }
 }
+
+// Khi trang web được tải hoàn chỉnh, gọi hàm fetchCarData để lấy dữ liệu xe
 window.onload = fetchCarData;
 
 
-
-// hàm hiển thị danh sách sản phẩm có trong json
-document.addEventListener("DOMContentLoaded", function() {
-  fetch('http://localhost:5000/car')
-    .then(response => response.json())
-    .then(data => {
-
-      if (Array.isArray(data)) {
-        const carList = document.getElementById('show');
-        
-        carList.innerHTML = '';
-
-        data.forEach(car => {
-          const carDiv = document.createElement('div');
-          carDiv.classList.add('car');
-          carDiv.innerHTML = `
-            <div class="card">
-              <img src="${car.ImageUrl}" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">${car.Title}</h5>
-                <p class="card-text"><i class="bi bi-calendar-event-fill"></i> ${car.Year}</p>
-                <p class="card-text"><i class="bi bi-speedometer"></i> ${car.Kilometer} km</p>
-                <p class="card-text"><i class="bi bi-fuel-pump"></i> ${car.Fuel}</p>
-                <p class="card-text"><i class="bi bi-bezier2"></i> ${car.Transmission}</p>
-              </div>
-              <div class="card-footer">
-                <p class="card-text" style="font-size:20px; color:red;">${car.Price}</p>
-                <p class="card-text" style="font-size:12px;"><i class="bi bi-geo-alt"></i> ${car.Address.Province} - ${car.Address.Districts}</p>
-              </div>
-            </div>
-          `;
-          carList.appendChild(carDiv);
-        });
-      } else {
-        console.error("Expected an array but got:", data);
-      }
-    })
-    .catch(error => console.error('Error fetching data:', error));
-});
 
 
 
@@ -272,48 +239,49 @@ const checkInput = () => {
 
 
 // checkbox Province
-const getProvinceApi = async () => {
-  try {
-    const response = await axios.get("http://localhost:5000/province", {
-      headers: {
-        "Cache-Control": "no-cache",
-        "Pragma": "no-cache",
-        "Expires": "0"
-      }
-    });
-    const provinces = response.data.data.data;
-  
-    const checkboxContainer = document.getElementById("checkboxProvince");
+  const getProvinceApi = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/province", {
+        headers: {
+          "Cache-Control": "no-cache",
+          "Pragma": "no-cache",
+          "Expires": "0"
+        }
+      });
+      const provinces = response.data.data.data;
 
-    const provincesArray = Array.isArray(provinces) ? provinces : [provinces];
+    
+      const checkboxContainer = document.getElementById("checkboxProvince");
 
-    provincesArray.forEach(province => {
-      const checkboxDiv = document.createElement("div"); 
+      const provincesArray = Array.isArray(provinces) ? provinces : [provinces];
 
-      const checkbox = document.createElement("input");
-      checkbox.type = "checkbox";
-      checkbox.className = "checkbox-brand";
-      checkbox.value = province.name;
-      checkbox.onclick = fetchData;
+      provincesArray.forEach(province => {
+        const checkboxDiv = document.createElement("div"); 
 
-      const textNode = document.createTextNode(province.name);
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+        checkbox.className = "checkbox-brand";
+        checkbox.value = province.name;
 
-      checkboxDiv.appendChild(checkbox);
-      checkboxDiv.appendChild(textNode);
+        const textNode = document.createTextNode(province.name);
 
-      checkboxDiv.classList.add("checkbox-wrapper");
+        checkboxDiv.appendChild(checkbox);
+        checkboxDiv.appendChild(textNode);
 
-      checkboxContainer.appendChild(checkboxDiv);
-    });
+        checkboxDiv.classList.add("checkbox-wrapper");
 
-  } catch (error) {
-    console.error('Có lỗi xảy ra:', error);
+        checkboxContainer.appendChild(checkboxDiv);
+      });
+
+    } catch (error) {
+      console.error('Có lỗi xảy ra:', error);
+    }
   }
-}
 
-getProvinceApi();
+  getProvinceApi();
 
 
+  
 
 // chọn một checkbox ở hãng xe dòng xe sẽ hiển thị dưới thanh tìm kiếm
 const searchInput = document.getElementById("search");
@@ -331,6 +299,46 @@ checkboxContainer.addEventListener('change', function(event) {
     }
 });
 
+
+// hàm searchUser
+function searchUser() {
+  let valueSearchInput = document.getElementById("search").value;
+  let filteredCars = carData.filter((car) => {
+    return (
+      car.Title.toUpperCase().includes(valueSearchInput.toUpperCase()) ||
+      car.Year.toUpperCase().includes(valueSearchInput.toUpperCase()) ||
+      car.Fuel.toUpperCase().includes(valueSearchInput.toUpperCase()) ||
+      car.Kilometer.toUpperCase().includes(valueSearchInput.toUpperCase()) ||
+      car.Address.Province.toUpperCase().includes(
+        valueSearchInput.toUpperCase()
+      )
+    );
+  });
+  renderCars(filteredCars);
+}
+
+// hàm fetchData.
+const url = "http://localhost:5000/car";
+let carData = [];
+let list = [];
+
+async function fetchData(url) {
+  const response = await fetch(url);
+  return response.json();
+}
+
+async function loadData() {
+  carData = await fetchData(url);
+  renderCars(carData);
+}
+loadData();
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetchData();
+});
+
+
+
 // reponsive
 document.addEventListener('DOMContentLoaded', function() {
   const filterIcon = document.getElementById('filter-icon');
@@ -345,4 +353,99 @@ document.addEventListener('DOMContentLoaded', function() {
     searchPanel.classList.remove('open');
   });
 });
+
+// chat bot
+document.addEventListener("DOMContentLoaded", function() {
+  const chatInput = document.querySelector("#messageInput");
+  const sendChatBtn = document.querySelector("#send-btn");
+  const chatBox = document.querySelector("#chatbox");
+  const chatbotToggler = document.querySelector("#chatbot-toggler");
+  const chatbot = document.querySelector("#chatbot");
+  const headerClose = document.querySelector(".header-close");
+
+  const API_KEY = "AIzaSyByzkmMUL8wlE52MrxCMhL_eUrA6Lv2yFY";
+  const API_URL = "https://generativelanguage.googleapis.com/v1beta2/models/gemini:generateText";
+
+  let useMessage;
+
+  // Function to create chat list item
+  const createChatLi = (message, className) => {
+      const chatLi = document.createElement("li");
+      chatLi.classList.add("d-flex", "chat", className);
+
+      let chatContent = className === "outgoing" ?
+          `<p class="mw-75 text-light rounded-4 p-2 fs-6" style="background: #724ae8;">${message}</p>` :
+          `<span class="text-light text-center rounded align-self-end" style="background:#724ae8; line-height: 32px; width: 32px; height: 32px; margin: 0 10px 15px 0;"><i class="fa-solid fa-ghost"></i></span>
+          <p class="mw-75 text-dark bg-light rounded-4 p-2 fs-6">${message}</p>`;
+
+      chatLi.innerHTML = chatContent;
+      return chatLi;
+  };
+
+  // Function to generate response from Gemini API
+  const generateResponse = () => {
+      const requestOptions = {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${API_KEY}`
+          },
+          body: JSON.stringify({
+              "prompt": {
+                  "text": useMessage
+              }
+          })
+      };
+
+      fetch(API_URL, requestOptions)
+      .then(res => {
+          if (!res.ok) {
+              throw new Error(`Error: ${res.status} ${res.statusText}`);
+          }
+          return res.json();
+      })
+      .then(data => {
+          const responseMessage = data.candidates[0].text;
+          chatBox.appendChild(createChatLi(responseMessage, "incoming"));
+          chatBox.scrollTop = chatBox.scrollHeight;
+      })
+      .catch(error => {
+          console.error(error);
+      });
+  };
+
+  // Handle sending chat
+  const handleChat = () => {
+      useMessage = chatInput.value.trim();
+      if (!useMessage) return;
+
+      chatBox.appendChild(createChatLi(useMessage, "outgoing"));
+      chatInput.value = ""; // Clear input after sending message
+      chatBox.scrollTop = chatBox.scrollHeight;
+
+      setTimeout(() => {
+          chatBox.appendChild(createChatLi("Thinking ...", "incoming"));
+          chatBox.scrollTop = chatBox.scrollHeight;
+          generateResponse();
+      }, 600);
+  };
+
+  // Event listeners
+  sendChatBtn.addEventListener("click", handleChat);
+  chatInput.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+          handleChat();
+      }
+  });
+
+  chatbotToggler.addEventListener("click", () => {
+      chatbot.classList.toggle("d-none");
+  });
+
+  headerClose.addEventListener("click", () => {
+      chatbot.classList.add("d-none");
+  });
+});
+
+
 
