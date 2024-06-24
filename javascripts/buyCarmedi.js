@@ -1,4 +1,4 @@
-// const { GoogleGenerativeAI } = require("@google/generative-ai");
+// import * as generativeAi from '@google/generative-ai'; 
 
 const wrappers = document.querySelectorAll(".wrapper");
 
@@ -58,107 +58,215 @@ wrappers.forEach(wrapper => {
     updateProgress();
 });
 
-// Function to filter products based on price
-const filterByPrice = (products, minPrice, maxPrice) => {
-    return products.filter(product => {
-        const price = parseInt(product.Price);
-        return price >= minPrice && price <= maxPrice;
-    });
-};
+document.addEventListener('DOMContentLoaded', function () {
+  const wrappers = document.querySelectorAll('.wrapper');
 
-// Function to filter products based on year
-const filterByYear = (products, minYear, maxYear) => {
-    return products.filter(product => {
-        const year = parseInt(product.Year);
-        return year >= minYear && year <= maxYear;
-    });
-};
-
-// Function to filter products based on kilometers
-const filterByKilometer = (products, minKilometer, maxKilometer) => {
-    return products.filter(product => {
-        const kilometer = parseInt(product.Kilometer);
-        return kilometer >= minKilometer && kilometer <= maxKilometer;
-    });
-};
-
-// Function to search and filter products
-const searchPriceCar = async () => {
-    const minPrice1 = parseInt(wrappers[0].querySelector(".range-input .range-min").value);
-    const maxPrice1 = parseInt(wrappers[0].querySelector(".range-input .range-max").value);
-
-    const minYear = parseInt(wrappers[1].querySelector(".range-input .range-min").value);
-    const maxYear = parseInt(wrappers[1].querySelector(".range-input .range-max").value);
-
-    const minKilometer = parseInt(wrappers[2].querySelector(".range-input .range-min").value);
-    const maxKilometer = parseInt(wrappers[2].querySelector(".range-input .range-max").value);
-
-    try {
-        const response = await fetch(`http://localhost:5000/car`);
-        const data = await response.json();
-        // console.log('Data fetched from API:', data); 
-
-        let filteredProducts = filterByPrice(data, minPrice1, maxPrice1);
-        filteredProducts = filterByYear(filteredProducts, minYear, maxYear);
-        filteredProducts = filterByKilometer(filteredProducts, minKilometer, maxKilometer);
-
-        // console.log('Filtered products:', filteredProducts); 
-        updateProductList(filteredProducts);
-    } catch (error) {
-        console.error('Error fetching data from API:', error);
-    }
-};
-
-
-//hàm dùng chung update lại trang
-const updateProductList = (products) => {
-    const productList = document.getElementById("show");
-    productList.innerHTML = '';
-  
-    if (products.length === 0) {
-      productList.innerHTML = '<p>No products found matching the criteria.</p>';
-      return;
-    }
-  
-    products.forEach(product => {
-      const productDiv = document.createElement('div');
-      productDiv.classList.add('col-lg-4', 'col-md-6', 'col-sm-12', 'mb-4');
-      productDiv.innerHTML = `
-        <div class="card">
-          <img src="${product.ImageUrl}" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">${product.Title}</h5>
-            <p class="card-text"><i class="bi bi-calendar-event-fill"></i> ${product.Year}</p>
-            <p class="card-text"><i class="bi bi-speedometer"></i> ${product.Kilometer} km</p>
-            <p class="card-text"><i class="bi bi-fuel-pump"></i> ${product.Fuel}</p>
-            <p class="card-text"><i class="bi bi-bezier2"></i> ${product.Transmission}</p>
-          </div>
-          <div class="card-footer">
-            <p class="card-text" style="font-size:20px; color:red;">${product.Price}</p>
-            <p class="card-text" style="font-size:12px;"><i class="bi bi-geo-alt"></i> ${product.Address.Province} - ${product.Address.Districts}</p>
-          </div>
-        </div>
-      `;
-      productList.appendChild(productDiv);
-    });
-  };
-  
-
-
-
-wrappers.forEach((wrapper, index) => {
+  // Add event listeners to input elements to trigger search and update search view
+  wrappers.forEach(wrapper => {
     const rangeInputs = wrapper.querySelectorAll(".range-input input");
     rangeInputs.forEach(input => {
-        input.addEventListener('input', searchPriceCar);
+      input.addEventListener('input', () => {
+        searchPriceCar();
+        updateSearchView();
+      });
     });
 
     const yearInputs = wrapper.querySelectorAll(".year-input input");
     yearInputs.forEach(input => {
-        input.addEventListener('input', searchPriceCar);
+      input.addEventListener('input', () => {
+        searchPriceCar();
+        updateSearchView();
+      });
     });
+  });
+
+  searchPriceCar(); // Initial search to display all products
 });
 
-searchPriceCar();
+// Function to filter products based on price
+const filterByPrice = (products, minPrice, maxPrice) => {
+  return products.filter(product => {
+    const price = parseInt(product.Price);
+    return price >= minPrice && price <= maxPrice;
+  });
+};
+
+// Function to filter products based on year
+const filterByYear = (products, minYear, maxYear) => {
+  return products.filter(product => {
+    const year = parseInt(product.Year);
+    return year >= minYear && year <= maxYear;
+  });
+};
+
+// Function to filter products based on kilometers
+const filterByKilometer = (products, minKilometer, maxKilometer) => {
+  return products.filter(product => {
+    const kilometer = parseInt(product.Kilometer);
+    return kilometer >= minKilometer && kilometer <= maxKilometer;
+  });
+};
+
+// Function to search and filter products
+const searchPriceCar = async () => {
+  const minPriceInput = document.querySelector('#flush-collapseThree .range-min');
+  const maxPriceInput = document.querySelector('#flush-collapseThree .range-max');
+  const minYearInput = document.querySelector('#panelsStayOpen-collapseFour .range-min');
+  const maxYearInput = document.querySelector('#panelsStayOpen-collapseFour .range-max');
+  const minKilometerInput = document.querySelector('#panelsStayOpen-collapseFive .range-min');
+  const maxKilometerInput = document.querySelector('#panelsStayOpen-collapseFive .range-max');
+
+  const minPrice1 = minPriceInput ? parseInt(minPriceInput.value) : 0;
+  const maxPrice1 = maxPriceInput ? parseInt(maxPriceInput.value) : Infinity;
+
+  const minYear = minYearInput ? parseInt(minYearInput.value) : 0;
+  const maxYear = maxYearInput ? parseInt(maxYearInput.value) : new Date().getFullYear();
+
+  const minKilometer = minKilometerInput ? parseInt(minKilometerInput.value) : 0;
+  const maxKilometer = maxKilometerInput ? parseInt(maxKilometerInput.value) : Infinity;
+
+  try {
+    const response = await fetch(`http://localhost:5000/car`);
+    const data = await response.json();
+
+    let filteredProducts = filterByPrice(data, minPrice1, maxPrice1);
+    filteredProducts = filterByYear(filteredProducts, minYear, maxYear);
+    filteredProducts = filterByKilometer(filteredProducts, minKilometer, maxKilometer);
+
+    updateProductList(filteredProducts);
+  } catch (error) {
+    console.error('Error fetching data from API:', error);
+  }
+};
+
+const updateSearchView = () => {
+  let showSearch = document.getElementById('showSearch');
+  showSearch.innerHTML = '';
+
+  const minPriceInput = document.querySelector('#flush-collapseThree .range-min');
+  const maxPriceInput = document.querySelector('#flush-collapseThree .range-max');
+  const minYearInput = document.querySelector('#panelsStayOpen-collapseFour .range-min');
+  const maxYearInput = document.querySelector('#panelsStayOpen-collapseFour .range-max');
+  const minKilometerInput = document.querySelector('#panelsStayOpen-collapseFive .range-min');
+  const maxKilometerInput = document.querySelector('#panelsStayOpen-collapseFive .range-max');
+
+  const minPrice = minPriceInput ? minPriceInput.value : '';
+  const maxPrice = maxPriceInput ? maxPriceInput.value : '';
+  const minYear = minYearInput ? minYearInput.value : '';
+  const maxYear = maxYearInput ? maxYearInput.value : '';
+  const minKilometer = minKilometerInput ? minKilometerInput.value : '';
+  const maxKilometer = maxKilometerInput ? maxKilometerInput.value : '';
+
+  if (minPrice && maxPrice) {
+    addFilterItem(showSearch, `Từ ${minPrice} - ${maxPrice}`);
+  }
+
+  if (minYear && maxYear) {
+    addFilterItem(showSearch, `Từ ${minYear} - ${maxYear}`);
+  }
+
+  if (minKilometer && maxKilometer) {
+    addFilterItem(showSearch, `Từ ${minKilometer} - ${maxKilometer}`);
+  }
+};
+
+const addFilterItem = (container, text) => {
+  let li = document.createElement('li');
+  li.className = 'list-group-item d-flex justify-content-between align-items-center';
+  li.style.backgroundColor = 'rgba(45,144,229,0.30)';
+  li.style.border = '1px solid #ddd';
+  li.style.marginRight = '5px';
+  li.style.boxSizing = 'border-box';
+  li.innerHTML = `${text} <button class="btn border-0 btn-sm clear-filter">X</button>`;
+
+  li.querySelector('.clear-filter').addEventListener('click', function () {
+    li.remove();
+    deleteFilter(text); // Function to clear the specific filter
+  });
+
+  container.appendChild(li);
+};
+
+const deleteFilter = (li) => {
+  if (!li) {
+    console.error('Li element is undefined or null.');
+    return;
+  }
+
+  const text = li.trim();
+  if (text.includes('Giá')) {
+    const minPriceInput = document.querySelector('#flush-collapseThree .range-min');
+    const maxPriceInput = document.querySelector('#flush-collapseThree .range-max');
+    const minPriceNumber = document.querySelector('#flush-collapseThree .year-input .input-min');
+    const maxPriceNumber = document.querySelector('#flush-collapseThree .year-input .input-max');
+
+    
+
+    minPriceInput.value = 50000000;
+    maxPriceInput.value = 5000000000;
+    minPriceNumber.value = 50000000;
+    maxPriceNumber.value = 5000000000;
+  } else if (text.includes('Năm')) {
+    const minYearInput = document.querySelector('#panelsStayOpen-collapseFour .range-min');
+    const maxYearInput = document.querySelector('#panelsStayOpen-collapseFour .range-max');
+    const minYearNumber = document.querySelector('#panelsStayOpen-collapseFour .input-min');
+    const maxYearNumber = document.querySelector('#panelsStayOpen-collapseFour .input-max');
+
+    minYearInput.value = 2000;
+    maxYearInput.value = 2024;
+    minYearNumber.value = 2000;
+    maxYearNumber.value = 2024;
+  } else if (text.includes('Số KM')) {
+    const minKilometerInput = document.querySelector('#panelsStayOpen-collapseFive .range-min');
+    const maxKilometerInput = document.querySelector('#panelsStayOpen-collapseFive .range-max');
+    const minKilometerNumber = document.querySelector('#panelsStayOpen-collapseFive .input-min');
+    const maxKilometerNumber = document.querySelector('#panelsStayOpen-collapseFive .input-max');
+
+    minKilometerInput.value = 0;
+    maxKilometerInput.value = 500000;
+    minKilometerNumber.value = 0;
+    maxKilometerNumber.value = 500000;
+  }
+
+  // Update UI after clearing filter
+  searchPriceCar();
+};
+
+
+
+const updateProductList = (products) => {
+  const productList = document.getElementById("show");
+  productList.innerHTML = '';
+
+  if (products.length === 0) {
+    productList.innerHTML = '<p>No products found matching the criteria.</p>';
+    return;
+  }
+
+  products.forEach(product => {
+    const productDiv = document.createElement('div');
+    productDiv.classList.add('col-lg-4', 'col-md-6', 'col-sm-12', 'mb-4');
+    productDiv.innerHTML = `
+      <div class="card">
+        <img src="${product.ImageUrl}" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">${product.Title}</h5>
+          <p class="card-text"><i class="bi bi-calendar-event-fill"></i> ${product.Year}</p>
+          <p class="card-text"><i class="bi bi-speedometer"></i> ${product.Kilometer} km</p>
+          <p class="card-text"><i class="bi bi-fuel-pump"></i> ${product.Fuel}</p>
+          <p class="card-text"><i class="bi bi-bezier2"></i> ${product.Transmission}</p>
+        </div>
+        <div class="card-footer">
+          <p class="card-text" style="font-size:20px; color:red;">${product.Price}</p>
+          <p class="card-text" style="font-size:12px;"><i class="bi bi-geo-alt"></i> ${product.Address.Province} - ${product.Address.Districts}</p>
+        </div>
+      </div>
+    `;
+    productList.appendChild(productDiv);
+  });
+};
+
+
 
 // hàm phân trang 
 
@@ -300,45 +408,6 @@ checkboxContainer.addEventListener('change', function(event) {
 });
 
 
-// hàm searchUser
-function searchUser() {
-  let valueSearchInput = document.getElementById("search").value;
-  let filteredCars = carData.filter((car) => {
-    return (
-      car.Title.toUpperCase().includes(valueSearchInput.toUpperCase()) ||
-      car.Year.toUpperCase().includes(valueSearchInput.toUpperCase()) ||
-      car.Fuel.toUpperCase().includes(valueSearchInput.toUpperCase()) ||
-      car.Kilometer.toUpperCase().includes(valueSearchInput.toUpperCase()) ||
-      car.Address.Province.toUpperCase().includes(
-        valueSearchInput.toUpperCase()
-      )
-    );
-  });
-  renderCars(filteredCars);
-}
-
-// hàm fetchData.
-const url = "http://localhost:5000/car";
-let carData = [];
-let list = [];
-
-async function fetchData(url) {
-  const response = await fetch(url);
-  return response.json();
-}
-
-async function loadData() {
-  carData = await fetchData(url);
-  renderCars(carData);
-}
-loadData();
-
-document.addEventListener("DOMContentLoaded", () => {
-  fetchData();
-});
-
-
-
 // reponsive
 document.addEventListener('DOMContentLoaded', function() {
   const filterIcon = document.getElementById('filter-icon');
@@ -448,4 +517,115 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+// hàm load page giá xe gia đình thông qua hình ảnh
+document.addEventListener('DOMContentLoaded', function () {
+  let firstImage = document.querySelector('.slider-min img:first-child');
+  let threeImage = document.querySelector('.slider-min img:nth-of-type(2)');
+  firstImage.addEventListener('click', handleFirstImageClick);
+  threeImage.addEventListener('click', handleThreeImageClick);
+});
 
+async function handleFirstImageClick() {
+  try {
+    const data = await getDataImageBanner();
+    let filteredData = data.filter(product => product.Price >= 400000000 && product.Price <= 700000000);
+    updateUI(filteredData, {minPrice: 400000000, maxPrice: 700000000});
+  } catch (error) {
+    console.error('Error fetching or processing data:', error);
+  }
+}
+
+async function handleThreeImageClick() {
+  try {
+    const data = await getDataImageBanner();
+    let filteredData = data.filter(product => product.CarType === 'Toyota');
+    updateUI(filteredData, {carType: 'Toyota'})
+  } catch (error) {
+    console.error('Error fetching or processing data:', error);
+  }
+}
+
+function updateUI(filteredData, filter) {
+
+  let showSearch = document.getElementById('showSearch');
+  showSearch.innerHTML = '';
+  let li = document.createElement('li');
+  li.className = 'list-group-item d-flex justify-content-between align-items-center';
+  li.style.backgroundColor = 'rgba(45,144,229,0.30)';
+  li.style.border = '1px solid #ddd';
+  li.style.marginRight = '5px';
+  li.style.boxSizing = 'border-box';
+
+  if (filter.minPrice !== undefined && filter.maxPrice !== undefined) {
+    document.querySelector('.range-min').value = filter.minPrice;
+    document.querySelector('.range-max').value = filter.maxPrice;
+    li.innerHTML = `Từ ${filter.minPrice} triệu đến ${filter.maxPrice} triệu
+      <button class="btn border-0 btn-sm clear-filter">X</button>`;
+  } else if (filter.carType !== undefined) {
+    li.innerHTML = `${filter.carType}
+      <button class="btn border-0 btn-sm clear-filter">X</button>`;
+  }
+
+  showSearch.appendChild(li);
+
+
+  let showDetails = document.getElementById('show');
+  showDetails.innerHTML = '';
+
+  if (filteredData.length === 0) {
+    showDetails.innerHTML = '<p>No products found matching the criteria.</p>';
+    return;
+  }
+
+  filteredData.forEach(product => {
+    const carDiv = document.createElement('div');
+    carDiv.classList.add('col-lg-4', 'col-md-6', 'col-sm-12', 'mb-4');
+    carDiv.innerHTML = `
+      <div class="card">
+        <img src="${product.ImageUrl}" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">${product.Title}</h5>
+          <p class="card-text"><i class="bi bi-calendar-event-fill"></i> ${product.Year}</p>
+          <p class="card-text"><i class="bi bi-speedometer"></i> ${product.Kilometer} km</p>
+          <p class="card-text"><i class="bi bi-fuel-pump"></i> ${product.Fuel}</p>
+          <p class="card-text"><i class="bi bi-bezier2"></i> ${product.Transmission}</p>
+        </div>
+        <div class="card-footer">
+          <p class="card-text" style="font-size:20px; color:red;">${product.Price}</p>
+          <p class="card-text" style="font-size:12px;"><i class="bi bi-geo-alt"></i> ${product.Address.Province} - ${product.Address.Districts}</p>
+        </div>
+      </div>
+    `;
+    showDetails.appendChild(carDiv);
+  });
+
+  // Thêm sự kiện cho nút X mới được tạo
+  let clearFilterButtons = document.querySelectorAll('.clear-filter');
+  clearFilterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      clearFilter(li);
+    });
+  });
+}
+
+
+async function clearFilter(liElement) {
+  liElement.remove();
+  try {
+    const data = await getDataImageBanner(); 
+    renderPageNumber();
+    updateProductList(data);
+  } catch (error) {
+    console.error('Error fetching or processing data:', error);
+  }
+}
+
+
+const getDataImageBanner = async () => {
+  try {
+    const response = await axios.get('http://localhost:5000/car');
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+};

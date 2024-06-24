@@ -538,6 +538,16 @@ form {
   cursor: pointer;
 }
 
+/* CSS chỗ bộ lọc */
+.list-group-horizontal .list-group-item {
+  display: inline-block;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border: 1px solid #ddd;
+  background-color: rgba(45, 144, 229, 0.30);
+}
+
+
 
 
 /* Default styles for desktop */
