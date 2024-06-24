@@ -271,6 +271,7 @@ function searchUser() {
 
 let oBject = {
   address: [],
+  style: [],
   fuel: [],
   transmission: [],
   color: [],
@@ -279,17 +280,24 @@ let oBject = {
 
 function filterCars() {
   let filterArray = carData.filter((car) => {
-    return( oBject.address.length
-      ? oBject.address.includes(car.Address.Province.toUpperCase())
-      : []) && (oBject.fuel.length
-      ? oBject.fuel.includes(car.Fuel.toUpperCase())
-      : []) && (oBject.transmission.length
-      ? oBject.transmission.includes(car.Transmission.toUpperCase())
-      : []) && (oBject.color.length
-      ? oBject.color.includes(car.Color.toUpperCase())
-      : []) && (oBject.seat.length
-      ? oBject.seat.includes(car.Seats.toUpperCase())
-      : []);
+    return (
+      (oBject.address.length
+        ? oBject.address.includes(car.Address.Province.toUpperCase())
+        : []) &&
+      (oBject.style.length
+        ? oBject.style.includes(car.Style.toUpperCase())
+        : []) &&
+      (oBject.fuel.length
+        ? oBject.fuel.includes(car.Fuel.toUpperCase())
+        : []) &&
+      (oBject.transmission.length
+        ? oBject.transmission.includes(car.Transmission.toUpperCase())
+        : []) &&
+      (oBject.color.length
+        ? oBject.color.includes(car.Color.toUpperCase())
+        : []) &&
+      (oBject.seat.length ? oBject.seat.includes(car.Seats.toUpperCase()) : [])
+    );
   });
   renderCars(filterArray);
 }
@@ -300,7 +308,16 @@ function filterByAddress() {
     checkbox.value.toUpperCase()
   );
   oBject.address = selecterAddress;
-  filterCars()
+  filterCars();
+}
+
+function filterByStyle() {
+  const checkboxes = document.querySelectorAll(".checkbox-style:checked");
+  const selectedStyle = Array.from(checkboxes).map((checkbox) => 
+    checkbox.value.toUpperCase()
+  );
+  oBject.style = selectedStyle;
+  filterCars();
 }
 
 function filterByFuel() {
@@ -309,7 +326,7 @@ function filterByFuel() {
     checkbox.value.toUpperCase()
   );
   oBject.fuel = selectedFuel;
-  filterCars()
+  filterCars();
 }
 
 function filterByTransmission() {
@@ -320,7 +337,7 @@ function filterByTransmission() {
     checkbox.value.toUpperCase()
   );
   oBject.transmission = selectedTransmission;
-  filterCars()
+  filterCars();
 }
 
 function filterByColor() {
@@ -329,7 +346,7 @@ function filterByColor() {
     checkbox.value.toUpperCase()
   );
   oBject.color = selectedColor;
-  filterCars()
+  filterCars();
 }
 
 function filterBySeats() {
@@ -338,40 +355,7 @@ function filterBySeats() {
     checkbox.value.toUpperCase()
   );
   oBject.seat = selectedSeats;
-  filterCars()
-}
-
-
-let users = [];
-let filteredUsers = [];
-let currentPage = 1;
-const perPage = 10;
-
-async function fetchData() {
-  try {
-    const response = await axios.get('http://localhost:5000/car');
-    users = response.data;
-    filteredUsers = [...users];
-    renderCars(filteredUsers.slice(0, perPage));
-    renderPageNumbers();
-  } catch (error) {
-    console.error('Error fetching data:', error);
-  }
-}
-
-function handlePageNumber(num) {
-  currentPage = num;
-  const perUser = filteredUsers.slice((currentPage - 1) * perPage, currentPage * perPage);
-  renderCars(perUser);
-}
-
-function renderPageNumbers() {
-  const totalPage = Math.ceil(filteredUsers.length / perPage);
-  let paginationHTML = '';
-  for (let i = 1; i <= totalPage; i++) {
-    paginationHTML += `<li onclick="handlePageNumber(${i})">${i}</li>`;
-  }
-  document.getElementById('pagination').innerHTML = paginationHTML;
+  filterCars();
 }
 
 function renderCars(array) {
@@ -381,69 +365,21 @@ function renderCars(array) {
     const card = document.createElement("div");
     card.classList.add("card", "me-3", "mb-3");
     card.innerHTML = `
-      <div class="card">
-        <img src="${car.ImageUrl}" class="card-img-top" alt="${car.Title}">
-        <div class="card-body">
-          <h5 class="card-title" style="height: 40px;">${car.Title}</h5>
-          <p class="card-text"><i class="bi bi-calendar-event-fill"></i> ${car.Year}</p>
-          <p class="card-text"><i class="bi bi-speedometer"></i> ${car.Kilometer} km</p>
-          <br>
-          <p class="card-text"><i class="bi bi-fuel-pump"></i> ${car.Fuel}</p>
-          <p class="card-text"><i class="bi bi-bezier2"></i> ${car.Transmission}</p>
-        </div>
-        <div class="card-footer">
-          <p class="card-text" style="font-size:20px; color:red;">${car.Price}</p>
-          <p class="card-text" style="font-size:12px;"><i class="bi bi-geo-alt"></i> ${car.Address.Province} - ${car.Address.Districts}</p>
-        </div>
-      </div>`;
+    <div class="card">
+          <img src="${car.ImageUrl}" class="card-img-top">
+          <div class="card-body">
+            <h5 class="card-title" style="height: 40px;">${car.Title}</h5>
+              <p class="card-text"><i class="bi bi-calendar-event-fill"></i> ${car.Year}</p>
+              <p class="card-text"><i class="bi bi-speedometer"></i> ${car.Kilometer} km</p>
+              <br>
+              <p class="card-text"><i class="bi bi-fuel-pump"></i> ${car.Fuel}</p>
+              <p class="card-text"><i class="bi bi-bezier2"></i> ${car.Transmission}</p>
+          </div>
+          <div class="card-footer">
+            <p class="card-text" style="font-size:20px; color:red;">${car.Price}</p>
+            <p class="card-text" style="font-size:12px;"><i class="bi bi-geo-alt"></i> ${car.Address.Province} - ${car.Address.Districts}</p>
+          </div>
+        </div>`;
     cardsContainer.appendChild(card);
   });
 }
-
-function searchUser() {
-  const valueSearchInput = document.getElementById('search').value.toUpperCase();
-  filteredUsers = users.filter(user => user.Title.toUpperCase().includes(valueSearchInput));
-  handlePageNumber(1);
-  renderPageNumbers();
-}
-
-function sortUsers(sortType) {
-  if (sortType === "asc") {
-    filteredUsers.sort((a, b) => a.id - b.id);
-  } else if (sortType === "desc") {
-    filteredUsers.sort((a, b) => b.id - a.id);
-  } else if (sortType === "price_asc") {
-    filteredUsers.sort((a, b) => parseFloat(a.Price) - parseFloat(b.Price));
-  } else if (sortType === "price_desc") {
-    filteredUsers.sort((a, b) => parseFloat(b.Price) - parseFloat(a.Price));
-  } else if (sortType === "km_asc") {
-    filteredUsers.sort((a, b) => parseFloat(a.Kilometer) - parseFloat(b.Kilometer));
-  } else if (sortType === "km_desc") {
-    filteredUsers.sort((a, b) => parseFloat(b.Kilometer) - parseFloat(a.Kilometer));
-  } else if (sortType === "year_asc") {
-    filteredUsers.sort((a, b) => parseFloat(a.Year) - parseFloat(b.Year));
-  } else if (sortType === "year_desc") {
-    filteredUsers.sort((a, b) => parseFloat(b.Year) - parseFloat(a.Year));
-  }
-  
-  handlePageNumber(1);
-  renderPageNumbers();
-}
-
-document.getElementById('showSortDiv').addEventListener('click', function() {
-  const sortDiv = document.getElementById('sortDiv');
-  sortDiv.style.display = sortDiv.style.display === 'none' ? 'block' : 'none';
-});
-
-document.addEventListener("click", function(event) {
-  const sortDiv = document.getElementById('sortDiv');
-  const showSortDiv = document.getElementById('showSortDiv');
-  if (!sortDiv.contains(event.target) && !showSortDiv.contains(event.target)) {
-    sortDiv.style.display = 'none';
-  }
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  fetchData();
-});
-

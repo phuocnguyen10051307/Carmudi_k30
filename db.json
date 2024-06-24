@@ -39,7 +39,7 @@
       "Style": "MPV",
       "Transmission": "Số tự động",
       "Fuel": "Dầu",
-      "Color": "Nâu đất",
+      "Color": "Nâu đỏ",
       "Seats": "4",
       "Origin": "Trong nước",
       "Title": "Toyota bản Allion",
@@ -137,6 +137,97 @@
       "Title": "VinFast VF4",
       "ImageUrl": "https://th.bing.com/th/id/R.8716ab7b2aaaf293117c8c44718cdc81?rik=9ae2Z1FTBxFwVQ&pid=ImgRaw&r=0",
       "id": 6
+    },
+    {
+      "Address": {
+        "Province": "Cần Thơ",
+        "Districts": "Vĩnh Thạnh"
+      },
+      "Personal": "Henry",
+      "Phone": "123456789",
+      "CarType": "VinFast",
+      "Vehicles": "VF3",
+      "Version": "Cao cấp",
+      "Year": "2016",
+      "Kilometer": "123123123",
+      "Price": "150000000",
+      "Style": "Wagon",
+      "Transmission": "Số tự động",
+      "Fuel": "Dầu",
+      "Color": "Đen",
+      "Seats": "4",
+      "Origin": "Ngoài nước",
+      "Title": "VinFast VF3",
+      "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/carmudiproject-1005.appspot.com/o/images%2FOIP.jpg?alt=media&token=c544ec31-f2d7-4a3f-bd6d-ac571a6fa3fd",
+      "id": 7
+    },
+    {
+      "Address": {
+        "Province": "Cần Thơ",
+        "Districts": "Vĩnh Thạnh"
+      },
+      "Personal": "Henry",
+      "Phone": "123456789",
+      "CarType": "VinFast",
+      "Vehicles": "VF3",
+      "Version": "Cao cấp",
+      "Year": "2016",
+      "Kilometer": "123123123",
+      "Price": "150000000",
+      "Style": "Wagon",
+      "Transmission": "Số tự động",
+      "Fuel": "Dầu",
+      "Color": "Đen",
+      "Seats": "4",
+      "Origin": "Ngoài nước",
+      "Title": "VinFast VF3",
+      "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/carmudiproject-1005.appspot.com/o/images%2FOIP.jpg?alt=media&token=c544ec31-f2d7-4a3f-bd6d-ac571a6fa3fd",
+      "id": 8
+    },
+    {
+      "Address": {
+        "Province": "Long An",
+        "Districts": "Thủ Thừa"
+      },
+      "Personal": "Henry",
+      "Phone": "0911115555",
+      "CarType": "Toyota",
+      "Vehicles": "Allion",
+      "Version": "Khác",
+      "Year": "2017",
+      "Kilometer": "1500",
+      "Price": "150000000",
+      "Style": "Couple",
+      "Transmission": "Số tự động",
+      "Fuel": "Điện",
+      "Color": "Trắng",
+      "Seats": "7",
+      "Origin": "Trong nước",
+      "Title": "Camri",
+      "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/carmudiproject-1005.appspot.com/o/images%2FOIP.jpg?alt=media&token=55f1df16-dbf8-4a92-9563-55889644da3c",
+      "id": 9
+    },
+    {
+      "Address": {
+        "Province": "Chọn tỉnh/thành",
+        "Districts": "Chọn quận/huyện"
+      },
+      "Personal": "",
+      "Phone": "0911115555",
+      "CarType": "VinFast",
+      "Vehicles": "Fadil",
+      "Version": "Cao cấp",
+      "Year": "2016",
+      "Kilometer": "150",
+      "Price": "",
+      "Style": "Chọn kiểu dáng",
+      "Transmission": "Chọn hộp số",
+      "Fuel": "Chọn loại nhiên liệu",
+      "Color": "Chọn màu xe",
+      "Seats": "Chọn số ghế",
+      "Origin": "Chọn xuất xứ",
+      "Title": "",
+      "id": 10
     }
   ],
   "districts": {

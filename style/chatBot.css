@@ -1,0 +1,33 @@
+.bi-x-square {
+    top: 0;
+    right: 5%;
+    height: 15px;
+    width: 15px;
+    cursor: pointer;
+}
+
+.bi-x-square:hover {
+    color: red;
+}
+
+.bi-chat-dots-fill {
+    color: rgb(53, 157, 90);
+    position: fixed;
+    right: 5%;
+    bottom: 10%;
+    font-size: 40px;
+}
+
+.card-chatbot {
+    width: 18rem !important;
+    height: 25rem !important;
+    border: 3px solid black;
+    right: 14%;
+    bottom: 12%;
+}
+
+.chatbot-body {
+    word-break: break-word;
+    text-align: justify;
+    overflow: auto;
+}
