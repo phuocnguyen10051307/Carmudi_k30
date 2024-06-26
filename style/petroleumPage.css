@@ -1,0 +1,153 @@
+/* Header css */
+.header {
+  background-color: #061b2e;
+}
+.header a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+.header a:hover {
+    color: orange;
+    border-bottom: 3px solid orange;
+}
+.header .navbar-brand:nth-child(1) {
+    border-bottom: none;
+}
+.header .nav-link:nth-child(9) {
+    border-bottom: none;
+}
+.header .nav-account .nav-link:hover {
+    border-bottom: none;
+}
+
+/* Content Css */
+
+.banner-content {
+    height: 420px;
+    max-height: 420px;
+    background-image: url(../assets/carstrol-bg-fuelPage.png);
+    background-size: cover;
+}
+.banner-content a {
+    border-radius: 50px;
+    text-align: center;
+}
+.banner-content a:hover {
+    opacity: 0.7;
+}
+
+.type-petroleum {
+    background-color: #f8f8f8e4;
+}
+.slider-petroleum .card {
+    background-color: #f8f8f8e4;
+    border: none !important;
+}
+.slider-petroleum img {
+    height: 200px;
+    object-fit: contain;
+}
+.slider-petroleum .card:hover {
+    background-color: #139247;
+}
+
+.cas-section {
+    height: auto;
+}
+.cas-content {
+    width: 40%;
+    word-break:break-word;
+    text-align: justify;
+}
+.more-text {
+    display: none;
+}
+
+#toggle-button {
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#toggle-button:hover {
+    text-decoration: underline;
+}
+
+.cas-video {
+    position: relative;
+    padding-bottom: 20%; /* 16:9 aspect ratio */
+    height: 0;
+    width: 60%;
+    max-width: 60%;
+    background: #000;
+    margin: 20px auto; /* Centers the video */
+    border: 5px solid #ccc; /* Adds a border around the video */
+    border-radius: 10px; /* Rounds the corners of the border */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Adds a shadow effect */
+}
+
+.cas-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 300px;
+}
+
+/* Fooster */
+.footer {
+    background-color: rgb(9 37 61);
+    width: auto;
+  }
+  
+  .footer-left {
+    width: 250px;
+  }
+  
+  .container {
+    display: grid;
+    margin-top: auto;
+  }
+  
+  .text-white > .d-flex > input {
+    width: 330px;
+  }
+  
+  .input-btn {
+    width: 80px;
+    height: 50px;
+    background-color: rgb(11, 143, 243);
+  }
+  
+  .text-md {
+    font-size: 14px;
+  }
+  
+  .mt-5 {
+    margin-top: 1.25rem;
+  }
+  
+  .icon {
+    align-items: baseline;
+    margin-left: 0;
+    list-style: none;
+    gap: 2rem;
+    padding: 0px;
+  }
+  
+  .list-st {
+    list-style: none;
+    padding: 0px;
+    width: 200px;
+  }
+  
+  .text-ft {
+    color: rgb(165 183 198);
+  }
+  
+  .text-sz {
+    font-size: 12px;
+  }
