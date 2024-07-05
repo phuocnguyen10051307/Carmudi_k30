@@ -172,57 +172,17 @@ wrappers.forEach((wrapper, index) => {
 });
 searchPriceCar();
 
-// JS of Register
-const registerBtn = document.getElementById("registerBtn");
-const overlay = document.getElementById("overlay");
+//get UserName
+// Lấy thông tin người dùng từ sessionStorage
+const username = sessionStorage.getItem('username');
 
-registerBtn.addEventListener("click", function () {
-  document.getElementById("register").style.display = "block";
-  overlay.style.display = "block"; // Hiển thị lớp mờ
-});
-
-document.getElementById("exit").addEventListener("click", function () {
-  document.getElementById("register").style.display = "none";
-  overlay.style.display = "none"; // Ẩn lớp mờ
-});
-
-const setUpAccount = async (event) => {
-  try {
-    event.preventDefault();
-    const phone = document.getElementById("phone").value;
-    const passWord = document.getElementById("passWord").value;
-    const name = document.getElementById("name").value;
-    if(phone == "" || phone.length < 9 || phone.length > 10) {
-      alert("Vui lòng nhập đúng số điện thoại!");
-      return false;
-    }
-    else if(passWord == "") {
-      alert("Vui lòng nhập mật khẩu muốn tạo!")
-      return false;
-    }
-    else if(name == "") {
-      alert("Vui lòng nhập tên cho tài khoản!")
-      return false;
-    }
-    const url = "http://localhost:5000/account";
-    const setUp = {
-      Phone: phone,
-      Password: passWord,
-      Name: name,
-    };
-
-    // Kiểm tra lại các giá trị đầu vào
-    console.log("Phone:", phone);
-    console.log("Password:", passWord);
-    console.log("Name:", name);
-    await axios.post(url, setUp);
-  } catch (error) {
-    // Log thêm thông tin về lỗi
-    console.error("Data posted failed!", error.response ? error.response.data : error.message);
-    throw error;
-  }
-};
-
+// Hiển thị tên người dùng trên nút hoặc bất kỳ vị trí nào bạn muốn
+const accountButton = document.getElementById("account-button");
+if (username) {
+  accountButton.innerText = username;
+} else {
+  accountButton.innerText = "Tài khoản";
+}
 
 // checkbox Province
 const getProvinceApi = async () => {

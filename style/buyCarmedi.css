@@ -398,9 +398,8 @@ input[type="range"]::-moz-range-thumb{
 
 #register {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: 30%;
+  left: 35%;
   z-index: 1001; /* Số thứ tự cao hơn của form đăng ký */
   background-color: white;
   padding: 20px;
@@ -409,22 +408,11 @@ input[type="range"]::-moz-range-thumb{
   display: none;
 }
 
-.input-icon{
-  position: fixed;
-  top: 45%;
-  left: 45px;
-}
-
 #exit {
   position: absolute;
   top: 10px;
   right: 10px;
   cursor: pointer;
-}
-
-.form-control::placeholder {
-  color: #aaa;
-  font-size: 14px;
 }
 
 .checkbox-wrapper {

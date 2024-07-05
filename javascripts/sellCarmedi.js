@@ -284,7 +284,6 @@ const showData = async (imageURL) => {
     const District = document.getElementById("district");
     const valueDistrict = District.options[District.selectedIndex].text;
 
-  
     const url = "http://localhost:5000/car";
     const getData = {
       Address: {
@@ -310,7 +309,7 @@ const showData = async (imageURL) => {
     };
 
     const response = await axios.post(url, getData);
-    
+
     console.log("Data posted successfully:", response.data);
 
     Toastify({
@@ -319,7 +318,7 @@ const showData = async (imageURL) => {
       duration: 3000,
       style: {
         background: "linear-gradient(to right, #00b09b, #96c93d)",
-      }
+      },
     }).showToast();
 
     return response.data;
@@ -332,7 +331,7 @@ const showData = async (imageURL) => {
       duration: 3000,
       style: {
         background: "linear-gradient(to right, #00b09b, #96c93d)",
-      }
+      },
     }).showToast();
     throw error;
   }
