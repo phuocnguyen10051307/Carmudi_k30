@@ -36,3 +36,59 @@
   #button-addon2{
     background-color: rgb(24 110 182);
   }
+
+  .close-btn{
+    display: block;   
+  }
+
+  @media (max-width: 480px) {
+    .navbar-collapse {
+      position: fixed;
+      top: 0;
+      left: -75%; /* Nằm bên trái màn hình và chiếm 75% độ rộng */
+      width: 75%;
+      height: 100%;
+      background-color: #fff;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      padding: 1rem;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Đổ bóng cho thanh menu */
+    }
+  
+    .navbar-collapse.show {
+      left: 0;
+    }
+  
+    .navbar-nav {
+      flex-direction: column;
+      text-align: center;
+      padding: 2rem 0;
+    }
+  
+    .navbar-nav .nav-item {
+      padding: 1rem;
+    }
+  
+    .navbar-nav .nav-link {
+      padding: 0.5rem 1rem;
+    }
+  
+    .navbar-brand {
+      margin-left: 10px; /* Điều chỉnh khoảng cách của logo so với các nội dung khác */
+    }
+  
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 1.5rem;
+      display: block;
+      cursor: pointer;
+    }
+  
+    .navbar-form{
+      display: flex;
+    }
+  
+    
+  }

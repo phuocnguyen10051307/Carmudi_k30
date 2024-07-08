@@ -118,35 +118,21 @@
   pointer-events: auto;
 }
 /* header */
-.flex-wrap {
-  flex-wrap: wrap;
+/* 
+
+/* navbar */
+
+.dropdown-menu {
+  width: auto !important;
+  min-width: 100%; 
+}
+.dropdown-menu .row {
+  flex-wrap: nowrap;
+}
+.dropdown-menu .col-md-4 {
+  flex: 1;
 }
 
-.justify-between {
-  justify-content: space-between;
-}
-
-.items-center {
-  align-items: center;
-}
-
-.m-auto {
-  margin: auto;
-}
-
-.pd {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-.max-w-screen {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
 
 /* nar */
 .text-w {
@@ -471,73 +457,6 @@ form {
   background-color: rgb(24 110 182);
 }
 
-
-/* CSS chat bot */
-.chatbot{
-  background: #E3F2FD;
-  right: 40px;
-  bottom: 100px;
-  overflow: hidden;
-  transform: scale(0.5);
-  opacity: 0;
-  pointer-events: none;
-  width: 420px;
-  box-shadow: 0 0 128px 0 rgba(0, 0, 0, 0.1), 0 32px 64px -48px rgba(0, 0, 0, 0.5);
-}
-
-.show-chatbot .chatbot{
-  transform: scale(1);
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.chatbox{
-  overflow-y: auto;
-  padding: 30px 20px 70px;
-}
-
-#send-btn{
-  height: 40px;
-  line-height: 40px;
-  color: #724ae8;
-  visibility: hidden;
-}
-
-.chat-input textarea:valid ~ #send-btn{
-  visibility: visible;
-}
-
-.chatbot-toggler{
-  right: 40px;
-  bottom: 35px;
-  height: 50px;
-  width: 50px;
-  background: #724ae8;
-  border-radius: 50%;
-  outline: none;
-  cursor: pointer;
-}
-
-.show-chatbot .chatbot-toggler span:first-child,
-.chatbot-toggler span:last-child{
-  opacity: 0;
-}
-
-.show-chatbot .chatbot-toggler span:last-child{
-  opacity: 1;
-}
-
-.header-close{
-  right: 20px;
-  top: 50%;
-  display: none;
-  transform: translateY(-50%);
-}
-
-#sendBtn{
-  cursor: pointer;
-}
-
 /* CSS chỗ bộ lọc */
 .list-group-horizontal .list-group-item {
   display: inline-block;
@@ -545,6 +464,10 @@ form {
   margin-bottom: 5px;
   border: 1px solid #ddd;
   background-color: rgba(45, 144, 229, 0.30);
+}
+
+.close-btn{
+  display: none;
 }
 
 
@@ -653,25 +576,61 @@ form {
   }
 }
 
-
-
-@media(max-width:490px){
-  .chatbot{
-    right: 0;
-    bottom: 0;
-    width: 100%;
+/* navbar */
+@media (max-width: 480px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: -75%; 
+    width: 75%;
     height: 100%;
-    border-radius: 0;
+    background-color: #fff;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    padding: 1rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
   }
 
-  .chatbot .chatbox{
-    height: 90%;
+  .navbar-collapse.show {
+    left: 0;
   }
 
-  .header-close{
+  .navbar-nav {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .navbar-nav .nav-item {
+    padding: 1rem;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 0.5rem 1rem;
+  }
+
+  .navbar-brand {
+    margin-left: 10px; /* Điều chỉnh khoảng cách của logo so với các nội dung khác */
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.5rem;
     display: block;
+    cursor: pointer;
   }
+
+  .navbar-form{
+    display: flex;
+  }
+
+  
 }
+
+
+
 
 
 

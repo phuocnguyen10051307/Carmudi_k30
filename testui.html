@@ -3,28 +3,136 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
+    <title>Card with Discount Label Inside Image on the Right</title>
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <title>Document</title>
+    <style>
+      .card-image-container {
+        position: absolute;
+        top: 5px;
+        right: -9px;
+      }
+
+      .card-image {
+        width: 120px; /* Kích thước của hình ảnh */
+        height: 32px; /* Chiều cao của hình ảnh */
+      }
+
+      .discount-label {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        color: white;
+        padding: 10px 8px;
+        font-size: 12px;
+      }
+    </style>
   </head>
   <body>
     <div class="container-fluid">
-      <div class="raw">
-        <div class="col-lg-4 bg-dark"></div>
-        <div class="col-lg-8 bg-red"></div>
+      <div class="card-container">
+        <div class="card mb-3">
+          <div class="card-image-container">
+            <img src="assets/23percent.svg" class="card-image" alt="" />
+            <span class="discount-label">giảm giá 20 %</span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p>2.001.000 đ</p>
+            <span>4.062.000 đ</span>
+            <div class="row">
+              <div class="d-flex justify-content-between">
+                <p>2 tháng</p>
+                <span><i class="fa-solid fa-circle-check"></i></span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>2 tháng</p>
+                <span><i class="fa-solid fa-circle-check"></i></span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>2 tháng</p>
+                <span><i class="fa-solid fa-circle-check"></i></span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>2 tháng</p>
+                <span><i class="fa-solid fa-circle-check"></i></span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>2 tháng</p>
+                <span><i class="fa-solid fa-circle-check"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3">
+          <div class="card-image-container">
+            <img src="assets/23percent.svg" class="card-image" alt="" />
+            <span class="discount-label">giảm giá 20 %</span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p>2.001.000 đ</p>
+            <span>4.062.000 đ</span>
+            <div class="row">
+              <div class="d-flex justify-content-between">
+                <p>2 tháng</p>
+                <span><i class="fa-solid fa-circle-check"></i></span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>2 tháng</p>
+                <span><i class="fa-solid fa-circle-check"></i></span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>2 tháng</p>
+                <span><i class="fa-solid fa-circle-check"></i></span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>2 tháng</p>
+                <span><i class="fa-solid fa-circle-check"></i></span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>2 tháng</p>
+                <span><i class="fa-solid fa-circle-check"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-3">
+          <div class="card-image-container">
+            <!-- Bức hình và chữ giảm giá -->
+            <img src="assets/23percent.svg" class="card-image" alt="" />
+            <span class="discount-label">giảm giá 30 %</span>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p>2.001.000 đ</p>
+            <span>4.062.000 đ</span>
+            <div class="row">
+              <div class="d-flex justify-content-between">
+                <p>2 tháng</p>
+                <span><i class="fa-solid fa-circle-check"></i></span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>2 tháng</p>
+                <span><i class="fa-solid fa-circle-check"></i></span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>2 tháng</p>
+                <span><i class="fa-solid fa-circle-check"></i></span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>2 tháng</p>
+                <span><i class="fa-solid fa-circle-check"></i></span>
+              </div>
+              <div class="d-flex justify-content-between">
+                <p>2 tháng</p>
+                <span><i class="fa-solid fa-circle-check"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>

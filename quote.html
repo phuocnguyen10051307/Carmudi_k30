@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style/quote.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- navbar -->
+    <div>
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-light mb-2"
+        style="height: 72px"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand" href="./buyCarmedi.html"
+            ><img
+              src="./assets/logo-carmudi1.png"
+              style="width: 112px; height: 29px"
+              alt=""
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Mua xe
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <h3
+                        class="dropdown-header fw-bold text-dark"
+                        style="font-size: 16px"
+                      >
+                        Hãng xe phổ biến
+                      </h3>
+                      <a class="dropdown-item" href="#">Toyota</a>
+                      <a class="dropdown-item" href="#">Honda</a>
+                      <a class="dropdown-item" href="#">Mercedes-Benz</a>
+                      <a class="dropdown-item" href="#">Ford</a>
+                      <a class="dropdown-item" href="#">BMW</a>
+                      <a class="dropdown-item" href="#">Chevrolet</a>
+                      <a class="dropdown-item" href="#">Hyundai</a>
+                      <a class="dropdown-item" href="#">Kia</a>
+                      <a class="dropdown-item" href="#">Mazda</a>
+                      <a class="dropdown-item" href="#">VinFast</a>
+                      <a class="dropdown-item" href="#" style="color: #1a6fb7"
+                        >Xem tất cả</a
+                      >
+                    </div>
+                    <div class="col-md-4">
+                      <h3
+                        class="dropdown-header fw-bold text-dark"
+                        style="font-size: 16px"
+                      >
+                        Dòng xe phổ biến
+                      </h3>
+                      <a class="dropdown-item" href="#"
+                        >Mercedes-Benz GL Class</a
+                      >
+                      <a class="dropdown-item" href="#"
+                        >Mercedes-Benz E Class</a
+                      >
+                      <a class="dropdown-item" href="#"
+                        >Mitsubishi Xpander Cross</a
+                      >
+                      <a class="dropdown-item" href="#">Toyota Fortuner</a>
+                      <a class="dropdown-item" href="#"
+                        >Mercedes-Benz S Class</a
+                      >
+                      <a class="dropdown-item" href="#"
+                        >Mercedes-Benz C Class</a
+                      >
+                      <a class="dropdown-item" href="#">Hyundai Santafe</a>
+                      <a class="dropdown-item" href="#">Toyota Corolla Cross</a>
+                      <a class="dropdown-item" href="#">Ford Everest</a>
+                      <a class="dropdown-item" href="#">Toyota Vios</a>
+                    </div>
+                    <div class="col-md-4">
+                      <h3
+                        class="dropdown-header fw-bold text-dark"
+                        style="font-size: 16px"
+                      >
+                        Giá xe
+                      </h3>
+                      <a class="dropdown-item" href="#">Dưới 500 triệu</a>
+                      <a class="dropdown-item" href="#">Từ 500 - 700 triệu</a>
+                      <a class="dropdown-item" href="#">Từ 700 - 1 tỷ</a>
+                      <a class="dropdown-item" href="#">Trên 1 tỷ</a>
+                    </div>
+                  </div>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="./sellCarmedi.html"
+                  >Bán xe</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./IntroCarmedi.html">Giới thiệu</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="./newsCarmedi.html">Tin tức</a>
+              </li>
+            </ul>
+            <div
+              class="navbar-form d-flex align-items-center"
+              style="gap: 30px"
+            >
+              <button
+                class="btn text-uppercase me-2 text-light"
+                style="background: orange"
+              >
+                <i class="fa-solid fa-car"></i> Đăng Tin
+              </button>
+              <span class="my-auto me-2"
+                ><i class="fa-solid fa-phone"></i> 0938119439</span
+              >
+              <div class="dropdown">
+                <button
+                  class="btn btn-link dropdown-toggle text-dark text-decoration-none"
+                  type="button"
+                  id="userDropdown"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <i class="fa-solid fa-user"></i> Tài khoản
+                </button>
+                <ul
+                  class="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="userDropdown"
+                >
+                  <li>
+                    <a class="dropdown-item" id="registerBtn" href="#"
+                      >Đăng ký</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="./login.html">Đăng nhập</a>
+                  </li>
+                  <li><a class="dropdown-item" href="#">Báo giá</a></li>
+                </ul>
+              </div>
+            </div>
+            <button class="close-btn" onclick="closeNavbar()">&times;</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Content -->
+    <div class="container-fluid" style="background: #1a6fb7; height: 154px">
+      <h1
+        class="text-light d-flex justify-content-center align-items-center h-100"
+      >
+        Báo giá
+      </h1>
+    </div>
+    <div class="container-fluid" style="background: #1a6fb7; height: 88px">
+      <div class="row h-100" style="margin: 0px 16px">
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+          <button
+            id="btn-odd-news"
+            class="btn btn-light w-100 h-100 rounded-top rounded-0 fw-bold group-btn"
+            style="font-size: 20px"
+            onclick="showOddNews()"
+          >
+            Tin lẻ
+            <p class="text-secondary" style="font-size: 13px">
+              Dành cho khách hàng bán xe cá nhân
+            </p>
+          </button>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+          <button
+            id="btn-plans"
+            class="btn btn-light w-100 h-100 rounded-top rounded-0 fw-bold group-btn"
+            style="font-size: 20px"
+            onclick="showPlans('6-thang', this)"
+          >
+            Gói đăng tin
+            <p class="text-secondary" style="font-size: 13px">
+              Dành cho khách hàng bán xe chuyên nghiệp
+            </p>
+          </button>
+        </div>
+        <div class="col-md-4 d-flex justify-content-center align-items-center">
+          <button
+            id="btn-advertisement"
+            class="btn btn-light w-100 h-100 rounded-top rounded-0 fw-bold group-btn"
+            style="font-size: 20px"
+            onclick="showAdvertisement()"
+          >
+            Gói quảng cáo
+            <p class="text-secondary" style="font-size: 13px">
+              Dành cho khách hàng bán xe chuyên nghiệp
+            </p>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div id="note" class="row">
+        <p class="mt-4 text-center">
+          <span class="text-danger fw-bold">Lưu ý:</span> Mỗi tin rao sẽ hiển
+          thị trong
+          <span class="text-danger fw-bold">30 ngày</span>
+        </p>
+      </div>
+      <!-- làm cấu trúc đỡ -->
+      <div
+        class="row justify-content-center"
+        id="box-button"
+        style="height: 40px"
+      >
+        <div
+          class="col-md-4 text-center shadow bg-body h-100"
+          style="border-radius: 20px; width: 300px"
+        >
+          <button
+            id="btn-1-thang"
+            class="btn h-100 fw-bold btn-custom"
+            onclick="showPlans('1-thang', this)"
+          >
+            1 tháng
+          </button>
+          <button
+            id="btn-3-thang"
+            class="btn h-100 fw-bold btn-custom"
+            onclick="showPlans('3-thang', this)"
+          >
+            3 tháng
+          </button>
+          <button
+            id="btn-6-thang"
+            class="btn h-100 fw-bold btn-custom"
+            onclick="showPlans('6-thang', this)"
+          >
+            6 tháng
+          </button>
+        </div>
+      </div>
+
+      <div id="pricing-plans" class="row mb-3 mt-3"></div>
+
+      <div class="row rounded" style="background: #f8f9fb">
+        <div class="col-md-6">
+          <p class="fw-bold text-primary">Qùa tặng và lưu ý</p>
+          <p>
+            Tặng <span class="fw-bold">01 tin thường</span> khi đăng ký thành
+            công. <a href="#">Đăng ký tài khoản tại đây</a>
+          </p>
+          <p>
+            Tin VIP đăng tối thiểu <span class="fw-bold">30 ngày</span> (chưa
+            VAT)
+          </p>
+        </div>
+        <div class="col-md-6 d-flex justify-content-around">
+          <p>
+            Liên hệ hỗ trợ:
+            <span><i class="fa-solid fa-phone"></i> 0938119439</span>
+          </p>
+          <div>
+            <img src="./assets/sales (1).png" alt="" />
+          </div>
+        </div>
+      </div>
+
+      <div class="row" style="margin-top: 100px">
+        <h1 class="fw-bold text-center">Câu hỏi thường gặp</h1>
+
+        <div class="accordion accordion-flush mt-4" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne"
+                aria-expanded="false"
+                aria-controls="flush-collapseOne"
+              >
+                Vì sao nên mua bán tại Carmudi
+              </button>
+            </h2>
+            <div
+              id="flush-collapseOne"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingOne"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                <p>
+                  - Khách hàng đặt lịch và tùy chọn nơi kiểm kiểm tra: tại
+                  Carmudi hoặc tại nhà theo yêu cầu của quý khách. <br />
+                  - Định giá tối ưu & minh bạch - Xe của bạn được định giá cao
+                  hơn giá thị trường. Toàn bộ quá trình giao dịch diễn ra trực
+                  tiếp giữa chủ xe và Carmudi. <br />
+                  - Hoàn tất thủ tục nhanh chóng, thanh toán trong vòng 24h -
+                  Toàn bộ quá trình mua bán diễn ra nhanh chóng. Thanh toán ngay
+                  lập tức sau khi hoàn thành các thủ tục giấy tờ pháp lý về việc
+                  chuyển quyền sở hữu xe. <br />
+                  - Bảo mật thông tin từ A đến Z - Toàn bộ quá trình từ đăng ký
+                  kiểm định giá đến hoàn tất giao dịch đều được Carmudi cam kết
+                  bảo mật thông tin.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseTwo"
+                aria-expanded="false"
+                aria-controls="flush-collapseTwo"
+              >
+                Quy trình bán xe tại Carmudi diễn ra như thế nào?
+              </button>
+            </h2>
+            <div
+              id="flush-collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingTwo"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                <p>
+                  Carmudi luôn hỗ trợ khách hàng để quá trình mua xe diễn ra dễ
+                  dàng hơn: <br />
+                  Bước 1: Khách hàng định giá xe tại Carmudi.vn và đặt lịch kiểm
+                  tra xe miễn phí <br />
+                  Bước 2: Sau đó, chuyên viên của Carmudi sẽ kiểm tra xe và đưa
+                  ra mức giá đề xuất cho quý khách hàng <br />
+                  Bước 3: Carmudi hỗ trợ hoàn tất thủ tục pháp lý để chuyển
+                  quyền sở hữu xe trong vòng 24 giờ <br />
+                  Bước 4: Ngay sau khi hoàn tất, Carmudi sẽ thanh toán cho bạn
+                  trong vòng 1 giờ theo mức giá chốt bán
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingThree">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseThree"
+                aria-expanded="false"
+                aria-controls="flush-collapseThree"
+              >
+                Lý do Carmudi thu mua được giá cao
+              </button>
+            </h2>
+            <div
+              id="flush-collapseThree"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingThree"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                <p>
+                  Carmudi thu mua xe đã qua sử dụng với mức giá cao hơn thị
+                  trường vì các lí do: <br />
+                  - Không mất phí trung gian, chủ xe trực tiếp bán xe cho
+                  Carmudi. <br />
+                  - Giá trị xe được tính toán dựa trên thuật toán AI kết hợp với
+                  kinh nghiệm của chuyên gia ô tô, để đảm bảo chiếc xe được định
+                  giá đúng với giá trị nhất. <br />
+                  - Ngoài ra, Carmudi luôn đặt quyền lợi của quý khách hàng lên
+                  hàng đầu, vì vậy khi sử dụng dịch vụ của Carmudi bạn sẽ nhận
+                  được những lợi ích sau: <br />
+                  1.Định giá và đặt lịch kiểm tra xe miễn phí <br />
+                  2. Nhận kết quả tình trạng xe và giá đề xuất <br />
+                  3. Carmudi tiến hành mọi thủ tục mua bán xe trong 24 giờ
+                  <br />
+                  4. Chủ xe nhận thanh toán nhanh gọn trong vòng 1 giờ <br />
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingFour">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseFour"
+                aria-expanded="false"
+                aria-controls="flush-collapseFour"
+              >
+                Cần chuẩn bị thủ tục hồ sơ gì khi bán xe tại Carmudi
+              </button>
+            </h2>
+            <div
+              id="flush-collapseFour"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingFour"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                <p>
+                  Hồ sơ giấy tờ cần chuẩn bị để bán xe nhanh chóng: <br />
+                  Giấy tờ gốc của chủ xe, bao gồm: <br />
+                  - CCCD của người đứng tên trên Đăng ký xe <br />
+                  - Giấy tờ liên quan đến tình trạng hôn nhân: Xác nhận độc
+                  thân/ đăng ký kết hôn/ Xác nhận ly hôn. <br />
+                  - Giấy xác nhận quyền thừa kế/ cho/ biếu/ tặng (nếu có) <br />
+                  - CCCD của vợ hoặc chồng (nếu có) <br />
+                  Giấy tờ gốc của xe, bao gồm: <br />
+                  - Đăng ký xe <br />
+                  - Đăng kiểm xe <br />
+                  - Sổ bảo hành (nếu có) <br />
+                  - Bảo hiểm vật chất xe (nếu có)
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingFive">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseFive"
+                aria-expanded="false"
+                aria-controls="flush-collapseFive"
+              >
+                Hình thức thanh toán giao dịch cho khách hàng của Carmudi
+              </button>
+            </h2>
+            <div
+              id="flush-collapseFive"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingFive"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                <p>
+                  Chúng tôi sẽ thanh toán qua tài khoản ngân hàng của bạn NGAY
+                  SAU KHI hoàn thành các thủ tục giấy tờ pháp lý về việc chuyển
+                  quyền sở hữu xe.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4 mb-4">
+        <p class="text-center">
+          Bạn không tìm thấy câu trả lời, vui lòng liên hệ tổng đài tư vấn của
+          chúng tôi:
+          <span class="fw-bold" style="color: rgb(26 111 183)"
+            ><i class="fa-solid fa-phone"></i> 0938119439</span
+          >
+        </p>
+      </div>
+    </div>
+    <!-- hãng xe -->
+    <div class="container-fluid bg-light p-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div>
+              <h3 style="font-size: 18px">Xe Toyota</h3>
+              <div id="toyota"></div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div>
+              <h3 style="font-size: 18px">Xe KIA</h3>
+              <div id="KIA"></div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div>
+              <h3 style="font-size: 18px">Xe Huyndai</h3>
+              <div id="huyndai"></div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div>
+              <h3 style="font-size: 18px">Xe Honda</h3>
+              <div id="honda"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div>
+              <h3 style="font-size: 18px">Xe Mazda</h3>
+              <div id="mazda"></div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div>
+              <h3 style="font-size: 18px">Xe Ford</h3>
+              <div id="Ford"></div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div>
+              <h3 style="font-size: 18px">Xe Mitsubishi</h3>
+              <div id="mitsubishi"></div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div>
+              <h3 style="font-size: 18px">Xe BMW</h3>
+              <div id="bmw"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="d-flex justify-content- flex-wrap py-5 px-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="footer-left">
+                <a href="">
+                  <img src="./assets/logo-carmudi-white.png" alt="" />
+                </a>
+                <p class="mt-5 text-white text-md">
+                  Carmudi - nền tảng hàng đầu trong lĩnh vực xe cũ tại Việt Nam.
+                  Cam kết mang đến cho khách hàng trải nghiệm hoàn toàn minh
+                  bạch, nhanh chóng và đáng tin cậy.
+                </p>
+                <ul class="icon d-flex">
+                  <li>
+                    <a href="" class="text-white">
+                      <i class="bi bi-facebook"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" class="text-white">
+                      <i class="bi bi-tiktok"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" class="text-white">
+                      <i class="bi bi-youtube"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="" class="text-white">
+                      <i class="bi bi-linkedin"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="text-white">
+                <p>Đăng ký nhận bản tin</p>
+                <p class="text-md">
+                  Nhận bản tin để không bỏ lỡ thông tin và khuyến mãi của
+                  Carmudi
+                </p>
+                <div class="d-flex">
+                  <input
+                    type="email"
+                    class="form-control input"
+                    placeholder="Nhập vào email của bạn"
+                    aria-label="Nhập vào email của bạn"
+                    aria-describedby="button-addon2"
+                  />
+                  <button
+                    class="btn btn-outline-secondary input-btn text-white"
+                    type="button"
+                    id="button-addon2"
+                  >
+                    Gửi
+                  </button>
+                </div>
+                <div class="d-flex pt-5">
+                  <div class="row">
+                    <div class="col">
+                      <div>
+                        <h2>Dịch vụ</h2>
+                      </div>
+                      <ul class="list-st">
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Mua xe ô tô</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Bán xe ô tô</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Trở thành cộng tác viên</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Báo giá cửa hàng</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="col">
+                      <div>
+                        <h2>Hỗ trợ</h2>
+                      </div>
+                      <ul class="list-st">
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Mua bảo hiểm ô tô</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Trả góp mua xe</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Câu hỏi thường gặp</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Liên hệ</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="col">
+                      <div>
+                        <h2>Về Carmudi</h2>
+                      </div>
+                      <ul class="list-st">
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Giới thiệu công ty</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Tin tức</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Chính sách quyền riêng tư</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Điều khoản sử dụng</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Cơ hội làm việc</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >Chứng nhận Carmudi</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div class="col">
+                      <div>
+                        <h2>Công ty thành viên</h2>
+                      </div>
+                      <ul class="list-st">
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >OtoS - Trang đăng tin bán</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            href=""
+                            class="text-ft text-md text-decoration-none"
+                            >xe uy tín tại Việt Nam</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div class="pb-5 px-4">
+            <p class="text-center text-sz text-ft">
+              CÔNG TY TNHH XE CLASSIFIEDS. Hotline: 0938119439 (Toàn quốc) Số
+              ĐKKD: 0312648170<br />
+              Địa chỉ: Tầng 6, Toà nhà Mê Linh Point, 2 Ngô Đức Kế, Phường Bến
+              Nghé, Quận 1, Thành Phố Hồ Chí Minh, Việt Nam. ©2023 by Car
+              Classifieds Limited Liability Company.<br />
+              Carmudi Vietnam là một thành viên của
+              <a
+                class="text-decoration-none"
+                style="color: rgb(165 183 198)"
+                href="https://fram.asia/"
+                ><span class="fw-bold text-white">fram^ </span>Group</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- script -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./javascripts/quote.js"></script>
+  </body>
+</html>

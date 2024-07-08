@@ -423,98 +423,6 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-// chat bot
-document.addEventListener("DOMContentLoaded", function() {
-  const chatInput = document.querySelector("#messageInput");
-  const sendChatBtn = document.querySelector("#send-btn");
-  const chatBox = document.querySelector("#chatbox");
-  const chatbotToggler = document.querySelector("#chatbot-toggler");
-  const chatbot = document.querySelector("#chatbot");
-  const headerClose = document.querySelector(".header-close");
-
-  const API_KEY = "AIzaSyByzkmMUL8wlE52MrxCMhL_eUrA6Lv2yFY";
-  const API_URL = "https://generativelanguage.googleapis.com/v1beta2/models/gemini:generateText";
-
-  let useMessage;
-
-  // Function to create chat list item
-  const createChatLi = (message, className) => {
-      const chatLi = document.createElement("li");
-      chatLi.classList.add("d-flex", "chat", className);
-
-      let chatContent = className === "outgoing" ?
-          `<p class="mw-75 text-light rounded-4 p-2 fs-6" style="background: #724ae8;">${message}</p>` :
-          `<span class="text-light text-center rounded align-self-end" style="background:#724ae8; line-height: 32px; width: 32px; height: 32px; margin: 0 10px 15px 0;"><i class="fa-solid fa-ghost"></i></span>
-          <p class="mw-75 text-dark bg-light rounded-4 p-2 fs-6">${message}</p>`;
-
-      chatLi.innerHTML = chatContent;
-      return chatLi;
-  };
-
-  // Function to generate response from Gemini API
-  const generateResponse = () => {
-      const requestOptions = {
-          method: "POST",
-          headers: {
-              "Content-Type": "application/json",
-              "Authorization": `Bearer ${API_KEY}`
-          },
-          body: JSON.stringify({
-              "prompt": {
-                  "text": useMessage
-              }
-          })
-      };
-
-      fetch(API_URL, requestOptions)
-      .then(res => {
-          if (!res.ok) {
-              throw new Error(`Error: ${res.status} ${res.statusText}`);
-          }
-          return res.json();
-      })
-      .then(data => {
-          const responseMessage = data.candidates[0].text;
-          chatBox.appendChild(createChatLi(responseMessage, "incoming"));
-          chatBox.scrollTop = chatBox.scrollHeight;
-      })
-      .catch(error => {
-          console.error(error);
-      });
-  };
-
-  // Handle sending chat
-  const handleChat = () => {
-      useMessage = chatInput.value.trim();
-      if (!useMessage) return;
-
-      chatBox.appendChild(createChatLi(useMessage, "outgoing"));
-      chatInput.value = ""; // Clear input after sending message
-      chatBox.scrollTop = chatBox.scrollHeight;
-
-      setTimeout(() => {
-          chatBox.appendChild(createChatLi("Thinking ...", "incoming"));
-          chatBox.scrollTop = chatBox.scrollHeight;
-          generateResponse();
-      }, 600);
-  };
-
-  // Event listeners
-  sendChatBtn.addEventListener("click", handleChat);
-  chatInput.addEventListener("keydown", (event) => {
-      if (event.key === "Enter") {
-          handleChat();
-      }
-  });
-
-  chatbotToggler.addEventListener("click", () => {
-      chatbot.classList.toggle("d-none");
-  });
-
-  headerClose.addEventListener("click", () => {
-      chatbot.classList.add("d-none");
-  });
-});
 
 
 // hàm load page giá xe gia đình thông qua hình ảnh
@@ -629,3 +537,8 @@ const getDataImageBanner = async () => {
     console.error('Error fetching data:', error);
   }
 };
+
+// navbar
+function closeNavbar() {
+  document.getElementById('navbarSupportedContent').classList.remove('show');
+}
